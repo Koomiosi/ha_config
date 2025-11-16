@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "core.label_registry",
+  "data": {
+    "labels": [
+      {
+        "color": null,
+        "description": null,
+        "icon": null,
+        "label_id": "kph_lampotila",
+        "name": "KPH Lämpötila",
+        "created_at": "2025-04-11T14:04:39.091041+00:00",
+        "modified_at": "2025-04-11T14:04:39.091060+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": null,
+        "label_id": "kph_kosteus",
+        "name": "KPH Kosteus",
+        "created_at": "2025-04-11T14:05:12.166907+00:00",
+        "modified_at": "2025-04-11T14:05:12.166927+00:00"
+      }
+    ]
+  }
+}

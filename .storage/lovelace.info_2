@@ -1,0 +1,713 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.info_2",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Info",
+          "path": "info",
+          "background": "center / cover no-repeat url(\"/local/bg7.jpg\")",
+          "icon": "mdi:tablet-dashboard",
+          "theme": "default",
+          "layout": {
+            "width": 400,
+            "max_cols": 4
+          },
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:apexcharts-card",
+                  "graph_span": "27h",
+                  "experimental": {
+                    "color_threshold": true
+                  },
+                  "show": {
+                    "last_updated": true
+                  },
+                  "header": {
+                    "title": "Electricity price",
+                    "show": true,
+                    "show_states": true,
+                    "colorize_states": true
+                  },
+                  "span": {
+                    "start": "day"
+                  },
+                  "yaxis": [
+                    {
+                      "min": 0,
+                      "decimals": 2,
+                      "apex_config": {
+                        "forceNiceScale": true
+                      }
+                    }
+                  ],
+                  "now": {
+                    "show": true,
+                    "label": "Now"
+                  },
+                  "series": [
+                    {
+                      "entity": "sensor.shf_electricity_price_now",
+                      "show": {
+                        "in_header": false,
+                        "extremas": true,
+                        "legend_value": false
+                      },
+                      "type": "column",
+                      "color": "lightgray",
+                      "float_precision": 2,
+                      "unit": "c/kWh",
+                      "data_generator": "return entity.attributes.data.map((d, index) => {\n  return [d[\"Timestamp\"]*1000, d[\"TotalPrice\"]*100];\n});\n",
+                      "color_threshold": [
+                        {
+                          "value": 0,
+                          "color": "368f39"
+                        },
+                        {
+                          "value": 10,
+                          "color": "a3b34d"
+                        },
+                        {
+                          "value": 20,
+                          "color": "ffd57e"
+                        },
+                        {
+                          "value": 30,
+                          "color": "f18c56"
+                        },
+                        {
+                          "value": 40,
+                          "color": "de425b"
+                        }
+                      ]
+                    },
+                    {
+                      "entity": "sensor.shf_electricity_price_now",
+                      "show": {
+                        "in_header": true,
+                        "header_color_threshold": true,
+                        "in_chart": false
+                      },
+                      "type": "line",
+                      "color": "lightgray",
+                      "float_precision": 2,
+                      "stroke_width": 0,
+                      "transform": "return x*100",
+                      "unit": "c/kWh",
+                      "color_threshold": [
+                        {
+                          "value": 0,
+                          "color": "368f39"
+                        },
+                        {
+                          "value": 10,
+                          "color": "a3b34d"
+                        },
+                        {
+                          "value": 20,
+                          "color": "ffd57e"
+                        },
+                        {
+                          "value": 30,
+                          "color": "f18c56"
+                        },
+                        {
+                          "value": 40,
+                          "color": "de425b"
+                        }
+                      ]
+                    }
+                  ],
+                  "card_mod": {
+                    "style": "ha-card {\n  background: rgba(0, 0, 0, 0.2);\n  color: white;\n  border-radius: 12px;\n}\n"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "## 📅 {% set weekdays = ['ma', 'ti', 'ke', 'to', 'pe', 'la', 'su'] %} {% set weekday = weekdays[now().weekday()] %} {{ weekday }} {{ now().day }}.{{ now().month }}.{{ now().year }}\n🕒 {{ states('sensor.time') }}\n",
+                  "text_only": true,
+                  "card_mod": {
+                    "style": "ha-card {\n  background: rgba(0, 0, 0, 0.2);\n  color: white;\n  padding: 16px;\n  border-radius: 12px;\n  text-align: center\n}\n"
+                  }
+                },
+                {
+                  "show_current": true,
+                  "show_forecast": true,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_home",
+                  "forecast_type": "daily",
+                  "forecast_slots": 6,
+                  "card_mod": {
+                    "style": "ha-card {\n  background: rgba(0, 0, 0, 0.2);\n  color: white;\n  padding: 16px;\n  border-radius: 12px;\n  text-align: center\n}\n"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "name": "Solar",
+                      "icon": "mdi:solar-power-variant",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "Solar system",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.solarnet_power_photovoltaics",
+                                "name": "Tuotanto"
+                              },
+                              {
+                                "entity": "sensor.solarnet_co2_factor",
+                                "name": "CO2 Päästöt"
+                              },
+                              {
+                                "entity": "sensor.solarnet_grid_export_tariff",
+                                "name": "Osto"
+                              },
+                              {
+                                "entity": "sensor.solarnet_grid_import_tariff",
+                                "name": "Myynti"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Kylpyhuone",
+                      "icon": "mdi:shower",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "Kylpyhuone",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_temperature",
+                                "name": "lämpötila"
+                              },
+                              {
+                                "entity": "sensor.shellyplus1pm_a0dd6c313c70_temperature",
+                                "name": "Lattian lämpötila"
+                              },
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_humidity",
+                                "name": "Kosteus"
+                              },
+                              {
+                                "entity": "input_number.kph_lattialammitys_lamporaja",
+                                "name": "Lämpöraja"
+                              },
+                              {
+                                "entity": "switch.shellyplus1pm_a0dd6c313c70_switch_0",
+                                "name": "Lattialämmitys on/off"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Eteinen",
+                      "icon": "mdi:home",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "Kylpyhuone",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_temperature",
+                                "name": "Lämpötila"
+                              },
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_humidity",
+                                "name": "Kosteus"
+                              },
+                              {
+                                "entity": "input_number.lattialammitys_lamporaja",
+                                "name": "Lämpöraja"
+                              },
+                              {
+                                "entity": "switch.shellyplus1pm_a0dd6c313c70_switch_0",
+                                "name": "Lattialämmitys on/off"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "name": "Lastenhuone",
+                      "icon": "mdi:teddy-bear",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "Kylpyhuone",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_temperature",
+                                "name": "Lämpötila"
+                              },
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_humidity",
+                                "name": "Kosteus"
+                              },
+                              {
+                                "entity": "input_number.lattialammitys_lamporaja",
+                                "name": "Lämpöraja"
+                              },
+                              {
+                                "entity": "switch.shellyplus1pm_a0dd6c313c70_switch_0",
+                                "name": "Lattialämmitys on/off"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Kodinhoitohuone",
+                      "icon": "mdi:home-heart",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "Kylpyhuone",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_temperature",
+                                "name": "Lämpötila"
+                              },
+                              {
+                                "entity": "sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_humidity",
+                                "name": "Kosteus"
+                              },
+                              {
+                                "entity": "input_number.lattialammitys_lamporaja",
+                                "name": "Lämpöraja"
+                              },
+                              {
+                                "entity": "switch.shellyplus1pm_a0dd6c313c70_switch_0",
+                                "name": "Lattialämmitys on/off"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "IV-huone",
+                      "icon": "mdi:air-conditioner",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "IV-Huone",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.shellyplus1pm_e465b8f2167c_temperature",
+                                "name": "Lämpötila"
+                              },
+                              {
+                                "entity": "input_number.iv_lattialammitys_lamporaja",
+                                "name": "Lämpöraja"
+                              },
+                              {
+                                "entity": "switch.shellyplus1pm_e465b8f2167c_switch_0",
+                                "name": "Lattialämmitys on/off"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "name": "Kuivaus",
+                      "icon": "mdi:tumble-dryer",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "Kuivausrumpu",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.kuivauskone_tila_ja_jaljella_oleva_aika",
+                                "name": "Aikaa jäljellä"
+                              },
+                              {
+                                "entity": "sensor.kuivauskone_job_state",
+                                "name": "Kuivausohjelma"
+                              },
+                              {
+                                "entity": "sensor.kuivauskone_machine_state",
+                                "name": "Kuivausrummun tila"
+                              },
+                              {
+                                "entity": "binary_sensor.kuivauskone_power",
+                                "name": "Kuivausrummun virta"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Pesu",
+                      "icon": "mdi:washing-machine",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "browser_mod.popup",
+                        "data": {
+                          "title": "Pesukone",
+                          "auto_close": true,
+                          "timeout": 0,
+                          "content": {
+                            "type": "entities",
+                            "entities": [
+                              {
+                                "entity": "sensor.pesukone_tila_ja_jaljella_oleva_aika",
+                                "name": "Aikaa jäljellä"
+                              },
+                              {
+                                "entity": "sensor.pesukone_job_state",
+                                "name": "Pesuohjelma"
+                              },
+                              {
+                                "entity": "sensor.pesukone_machine_state",
+                                "name": "Pesukoneen tila"
+                              },
+                              {
+                                "entity": "binary_sensor.pesukone_power",
+                                "name": "Pesukoneen virta"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "background-color": "rgba(0, 0, 0, 0.2)"
+                          },
+                          {
+                            "border-radius": "12px"
+                          },
+                          {
+                            "height": "80px"
+                          },
+                          {
+                            "width": "105px"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "custom:mod-card",
+              "card": {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "picture-entity",
+                    "entity": "camera.tapo_c310_c2a2_sd_stream",
+                    "camera_image": "camera.tapo_c310_c2a2_sd_stream",
+                    "camera_view": "live",
+                    "show_name": false,
+                    "show_state": false,
+                    "card_mod": {
+                      "style": "ha-card {\n  border-radius: 12px;\n  overflow: hidden;\n  background: none;\n}\n"
+                    }
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:button-card",
+                        "entity": "switch.shellyplus1_10061c7a4d10_switch_0",
+                        "name": "Ulkovalo",
+                        "icon": "mdi:lightbulb",
+                        "styles": {
+                          "card": [
+                            {
+                              "background-color": "rgba(0,0,0,0.2)"
+                            },
+                            {
+                              "height": "60px"
+                            },
+                            {
+                              "border-radius": "12px"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "custom:button-card",
+                        "entity": "switch.tapo_c310_c2a2_privacy",
+                        "name": "Kamera",
+                        "icon": "mdi:toggle-switch-variant-off",
+                        "styles": {
+                          "card": [
+                            {
+                              "background-color": "rgba(0,0,0,0.2)"
+                            },
+                            {
+                              "height": "60px"
+                            },
+                            {
+                              "border-radius": "12px"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "custom:button-card",
+                        "entity": "automation.ulkovalo_paalle_ja_pois_liiketunnistuksesta",
+                        "name": "Automaatio",
+                        "icon": "mdi:power",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "show_state": true,
+                        "state": [
+                          {
+                            "value": "on",
+                            "styles": {
+                              "card": [
+                                {
+                                  "background-color": "green"
+                                },
+                                {
+                                  "color": "white"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "value": "off",
+                            "styles": {
+                              "card": [
+                                {
+                                  "background-color": "red"
+                                },
+                                {
+                                  "color": "white"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "styles": {
+                  "card": [
+                    {
+                      "height": "60px"
+                    },
+                    {
+                      "border-radius": "12px",
+                      "styles": null,
+                      "card": [
+                        {
+                          "background-color": "rgba(0,0,0,0.2)"
+                        },
+                        {
+                          "height": "70px"
+                        },
+                        {
+                          "border-radius": "12px"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "type": "custom:horizontal-layout",
+          "subview": false
+        }
+      ]
+    }
+  }
+}

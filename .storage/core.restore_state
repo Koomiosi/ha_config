@@ -1,0 +1,390 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {"entity_id":"update.home_assistant_supervisor_update","state":"off","attributes":{"auto_update":true,"display_precision":0,"installed_version":"2025.05.5","in_progress":false,"latest_version":"2025.05.5","release_summary":null,"release_url":"https://github.com/home-assistant/supervisor/releases/tag/2025.05.5","skipped_version":null,"title":"Home Assistant Supervisor","update_percentage":null,"entity_picture":"https://brands.home-assistant.io/hassio/icon.png","friendly_name":"Home Assistant Supervisor Update","supported_features":1},"last_changed":"2025-11-16T20:54:58.208424+00:00","last_reported":"2025-11-16T20:54:58.208424+00:00","last_updated":"2025-11-16T20:54:58.208424+00:00","context":{"id":"01KA7765D0SCQB1F46KG5WACV7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.home_assistant_core_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"2025.6.1","in_progress":false,"latest_version":"2025.6.1","release_summary":null,"release_url":"https://www.home-assistant.io/latest-release-notes/","skipped_version":null,"title":"Home Assistant Core","update_percentage":null,"entity_picture":"https://brands.home-assistant.io/homeassistant/icon.png","friendly_name":"Home Assistant Core Update","supported_features":11},"last_changed":"2025-11-16T20:54:58.209442+00:00","last_reported":"2025-11-16T20:54:58.209442+00:00","last_updated":"2025-11-16T20:54:58.209442+00:00","context":{"id":"01KA7765D122R98W57QDGZ2KRY","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.mosquitto_broker_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"6.5.1","in_progress":false,"latest_version":"6.5.1","release_summary":null,"release_url":null,"skipped_version":null,"title":"Mosquitto broker","update_percentage":null,"entity_picture":"/api/hassio/addons/core_mosquitto/icon","friendly_name":"Mosquitto broker Update","supported_features":25},"last_changed":"2025-11-16T20:54:58.209952+00:00","last_reported":"2025-11-16T20:54:58.209952+00:00","last_updated":"2025-11-16T20:54:58.209952+00:00","context":{"id":"01KA7765D16KW9PCGE22YVM4V5","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.studio_code_server_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"5.19.3","in_progress":false,"latest_version":"5.19.3","release_summary":null,"release_url":null,"skipped_version":null,"title":"Studio Code Server","update_percentage":null,"entity_picture":"/api/hassio/addons/a0d7b954_vscode/icon","friendly_name":"Studio Code Server Update","supported_features":25},"last_changed":"2025-11-16T20:54:58.210401+00:00","last_reported":"2025-11-16T20:54:58.210401+00:00","last_updated":"2025-11-16T20:54:58.210401+00:00","context":{"id":"01KA7765D280KY66NXFT4XE3M8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.zigbee2mqtt_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"2.4.0-1","in_progress":false,"latest_version":"2.4.0-1","release_summary":null,"release_url":null,"skipped_version":null,"title":"Zigbee2MQTT","update_percentage":null,"entity_picture":"/api/hassio/addons/45df7312_zigbee2mqtt/icon","friendly_name":"Zigbee2MQTT Update","supported_features":25},"last_changed":"2025-11-16T20:54:58.210863+00:00","last_reported":"2025-11-16T20:54:58.210863+00:00","last_updated":"2025-11-16T20:54:58.210863+00:00","context":{"id":"01KA7765D21QCJ9CFP0Y919Z6J","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.file_editor_update","state":"off","attributes":{"auto_update":true,"display_precision":0,"installed_version":"5.8.0","in_progress":false,"latest_version":"5.8.0","release_summary":null,"release_url":null,"skipped_version":null,"title":"File editor","update_percentage":null,"entity_picture":"/api/hassio/addons/core_configurator/icon","friendly_name":"File editor Update","supported_features":25},"last_changed":"2025-11-16T20:54:58.211416+00:00","last_reported":"2025-11-16T20:54:58.211416+00:00","last_updated":"2025-11-16T20:54:58.211416+00:00","context":{"id":"01KA7765D3WDTHQ6AMSR81HWVD","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.terminal_ssh_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"9.17.0","in_progress":false,"latest_version":"9.17.0","release_summary":null,"release_url":null,"skipped_version":null,"title":"Terminal & SSH","update_percentage":null,"entity_picture":"/api/hassio/addons/core_ssh/icon","friendly_name":"Terminal & SSH Update","supported_features":25},"last_changed":"2025-11-16T20:54:58.211903+00:00","last_reported":"2025-11-16T20:54:58.211903+00:00","last_updated":"2025-11-16T20:54:58.211903+00:00","context":{"id":"01KA7765D3GRXG8STJ16T1530E","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.samba_share_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"12.5.1","in_progress":false,"latest_version":"12.5.1","release_summary":null,"release_url":null,"skipped_version":null,"title":"Samba share","update_percentage":null,"entity_picture":"/api/hassio/addons/core_samba/icon","friendly_name":"Samba share Update","supported_features":25},"last_changed":"2025-11-16T20:54:58.212269+00:00","last_reported":"2025-11-16T20:54:58.212269+00:00","last_updated":"2025-11-16T20:54:58.212269+00:00","context":{"id":"01KA7765D4ZWFRCR3Q736HP4MR","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.home_assistant_operating_system_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"15.2","in_progress":false,"latest_version":"15.2","release_summary":null,"release_url":"https://github.com/home-assistant/operating-system/releases/tag/15.2","skipped_version":null,"title":"Home Assistant Operating System","update_percentage":null,"entity_picture":"https://brands.home-assistant.io/homeassistant/icon.png","friendly_name":"Home Assistant Operating System Update","supported_features":11},"last_changed":"2025-11-16T20:54:58.212890+00:00","last_reported":"2025-11-16T20:54:58.212890+00:00","last_updated":"2025-11-16T20:54:58.212890+00:00","context":{"id":"01KA7765D48GZHSMPEG72X6WWV","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2025-11-16T20:54:59.998758+00:00","last_reported":"2025-11-16T20:54:59.998758+00:00","last_updated":"2025-11-16T20:54:59.998758+00:00","context":{"id":"01KA77674YDW2XXJ6WX86HFKTY","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2025-11-16T20:55:00.299401+00:00","last_reported":"2025-11-16T20:55:00.299401+00:00","last_updated":"2025-11-16T20:55:00.299401+00:00","context":{"id":"01KA7767EBC8PR7JHBVT5SE2RN","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "last_event_type": null,
+        "last_event_attributes": null
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"script.cheapest_hours","state":"off","attributes":{"last_triggered":null,"mode":"parallel","current":0,"max":100,"friendly_name":"Cheapest hours"},"last_changed":"2025-11-16T20:55:01.436491+00:00","last_reported":"2025-11-16T20:55:01.436491+00:00","last_updated":"2025-11-16T20:55:01.436491+00:00","context":{"id":"01KA7768HW2SREWG1S7RY6HYXZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"person.tony_kelanen","state":"unknown","attributes":{"editable":true,"id":"tony_kelanen","device_trackers":["device_tracker.lenovo_tb_x104f"],"user_id":"39fe241b24c14a8dad3d4d5e1175cd21","friendly_name":"Tony Kelanen"},"last_changed":"2025-11-16T20:55:01.454254+00:00","last_reported":"2025-11-16T20:55:11.984803+00:00","last_updated":"2025-11-16T20:55:11.984803+00:00","context":{"id":"01KA776JVG00AGAXGSP6CWRHQE","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.shf_rank_acceptable","state":"off","attributes":{"device_class":"power","friendly_name":"SHF Rank acceptable"},"last_changed":"2025-11-16T20:55:12.080156+00:00","last_reported":"2025-11-16T20:55:12.080156+00:00","last_updated":"2025-11-16T20:55:12.080156+00:00","context":{"id":"01KA776JYG50WPYXCP8ETGF2YH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.shf_price_acceptable","state":"off","attributes":{"device_class":"power","friendly_name":"SHF Price acceptable"},"last_changed":"2025-11-16T20:55:12.059628+00:00","last_reported":"2025-11-16T20:55:12.059628+00:00","last_updated":"2025-11-16T20:55:12.059628+00:00","context":{"id":"01KA776JXV9BXQ0D93AJDHNEYP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.shf_price_or_rank_acceptable","state":"off","attributes":{"device_class":"power","friendly_name":"SHF Price or Rank acceptable"},"last_changed":"2025-11-16T20:55:12.027177+00:00","last_reported":"2025-11-16T20:55:12.027177+00:00","last_updated":"2025-11-16T20:55:12.027177+00:00","context":{"id":"01KA776JWVQJETSF4QBV14VG7T","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_select.electricity_price_view","state":"Tänään","attributes":{"options":["Tänään","Huomenna"],"editable":false,"icon":"mdi:chart-bar","friendly_name":"Pörssisähkön näkymä"},"last_changed":"2025-11-16T20:55:01.474121+00:00","last_reported":"2025-11-16T20:55:01.474121+00:00","last_updated":"2025-11-16T20:55:01.474121+00:00","context":{"id":"01KA7768K20PMBHKPAJPSDA03F","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_select.shf_control_function","state":"Linear","attributes":{"options":["Linear","Sinusoidal"],"editable":false,"icon":"mdi:gauge","friendly_name":"SHF Control Function"},"last_changed":"2025-11-16T20:55:01.474396+00:00","last_reported":"2025-11-16T20:55:01.474396+00:00","last_updated":"2025-11-16T20:55:01.474396+00:00","context":{"id":"01KA7768K261G0BG7MSJDASKXT","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.kph_lattialammitys_lamporaja","state":"23.0","attributes":{"initial":null,"editable":false,"min":15.0,"max":30.0,"step":0.5,"mode":"box","unit_of_measurement":"°C","friendly_name":"KPH Lattialämmityksen lämpöraja"},"last_changed":"2025-11-16T20:55:01.474924+00:00","last_reported":"2025-11-16T20:55:01.474924+00:00","last_updated":"2025-11-16T20:55:01.474924+00:00","context":{"id":"01KA7768K2MKEXKBC2G76HY34K","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.iv_lattialammitys_lamporaja","state":"19.0","attributes":{"initial":null,"editable":false,"min":15.0,"max":30.0,"step":0.5,"mode":"box","unit_of_measurement":"°C","friendly_name":"IV Lattialämmityksen lämpöraja"},"last_changed":"2025-11-16T20:55:01.475179+00:00","last_reported":"2025-11-16T20:55:01.475179+00:00","last_updated":"2025-11-16T20:55:01.475179+00:00","context":{"id":"01KA7768K3FJEXRK6J8MP44H5T","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.shf_control_function_factor","state":"1.0","attributes":{"initial":null,"editable":false,"min":1.0,"max":3.0,"step":0.01,"mode":"box","icon":"mdi:gauge","friendly_name":"SHF Control Function Factor"},"last_changed":"2025-11-16T20:55:01.475432+00:00","last_reported":"2025-11-16T20:55:01.475432+00:00","last_updated":"2025-11-16T20:55:01.475432+00:00","context":{"id":"01KA7768K30072WTPZK390RFG9","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.shf_rank_slider","state":"1.0","attributes":{"initial":null,"editable":false,"min":1.0,"max":24.0,"step":1.0,"mode":"slider","friendly_name":"SHF Max Rank allowed"},"last_changed":"2025-11-16T20:55:01.475646+00:00","last_reported":"2025-11-16T20:55:01.475646+00:00","last_updated":"2025-11-16T20:55:01.475646+00:00","context":{"id":"01KA7768K392VZF1QYY6A1CAKF","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.shf_price_slider","state":"0.0","attributes":{"initial":null,"editable":false,"min":0.0,"max":4.0,"step":0.01,"mode":"box","unit_of_measurement":"€/kWh","icon":"mdi:cash-lock","friendly_name":"SHF Max Price allowed"},"last_changed":"2025-11-16T20:55:01.475860+00:00","last_reported":"2025-11-16T20:55:01.475860+00:00","last_updated":"2025-11-16T20:55:01.475860+00:00","context":{"id":"01KA7768K327MQ6RKJ56QMPQDQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.shf_price_avg_slider","state":"1.0","attributes":{"initial":null,"editable":false,"min":1.0,"max":24.0,"step":1.0,"mode":"slider","unit_of_measurement":"h","icon":"mdi:cash-clock","friendly_name":"SHF Average price hours"},"last_changed":"2025-11-16T20:55:01.476101+00:00","last_reported":"2025-11-16T20:55:01.476101+00:00","last_updated":"2025-11-16T20:55:01.476101+00:00","context":{"id":"01KA7768K4TBFA04QE24MRP6W2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.shf_control_factor","state":"0.0","attributes":{"initial":null,"editable":false,"min":0.0,"max":1000.0,"step":1.0,"mode":"box","friendly_name":"SHF Control Factor"},"last_changed":"2025-11-16T20:55:01.476337+00:00","last_reported":"2025-11-16T20:55:01.476337+00:00","last_updated":"2025-11-16T20:55:01.476337+00:00","context":{"id":"01KA7768K41VFRR7XGM5C08NJA","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.shf_price1_slider","state":"0.0","attributes":{"initial":null,"editable":false,"min":0.0,"max":1000.0,"step":0.0001,"mode":"box","unit_of_measurement":"€","icon":"mdi:cash-lock","friendly_name":"SHF Price1"},"last_changed":"2025-11-16T20:55:01.476556+00:00","last_reported":"2025-11-16T20:55:01.476556+00:00","last_updated":"2025-11-16T20:55:01.476556+00:00","context":{"id":"01KA7768K4MKT8KSQAQ0WTWR8C","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.shf_price2_slider","state":"0.0","attributes":{"initial":null,"editable":false,"min":0.0,"max":1000.0,"step":0.0001,"mode":"box","unit_of_measurement":"€","icon":"mdi:cash-lock","friendly_name":"SHF Price2"},"last_changed":"2025-11-16T20:55:01.476866+00:00","last_reported":"2025-11-16T20:55:01.476866+00:00","last_updated":"2025-11-16T20:55:01.476866+00:00","context":{"id":"01KA7768K4RHYDT8FBS5HYEE98","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_datetime.shf_price2_start","state":"00:00:00","attributes":{"has_date":false,"has_time":true,"editable":false,"hour":0,"minute":0,"second":0,"timestamp":0,"friendly_name":"SHF Price2 start"},"last_changed":"2025-11-16T20:55:01.477606+00:00","last_reported":"2025-11-16T20:55:01.477606+00:00","last_updated":"2025-11-16T20:55:01.477606+00:00","context":{"id":"01KA7768K5XBCMM1DNPQQTN2CT","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"input_datetime.shf_price2_stop","state":"00:00:00","attributes":{"has_date":false,"has_time":true,"editable":false,"hour":0,"minute":0,"second":0,"timestamp":0,"friendly_name":"SHF Price2 stop"},"last_changed":"2025-11-16T20:55:01.478081+00:00","last_reported":"2025-11-16T20:55:01.478081+00:00","last_updated":"2025-11-16T20:55:01.478081+00:00","context":{"id":"01KA7768K62HGFA5X4QZY7AJQ4","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"device_tracker.lenovo_tb_x104f","state":"unknown","attributes":{"source_type":"gps","friendly_name":"Lenovo TB-X104F"},"last_changed":"2025-11-16T20:55:05.698110+00:00","last_reported":"2025-11-16T20:55:05.698110+00:00","last_updated":"2025-11-16T20:55:05.698110+00:00","context":{"id":"01KA776CQ2WQF6J10GRFMFA049","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.lenovo_tb_x104f_battery_level","state":"63","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","icon":"mdi:battery-charging-60","friendly_name":"Lenovo TB-X104F Battery level"},"last_changed":"2025-11-16T20:55:05.699805+00:00","last_reported":"2025-11-16T20:55:05.699805+00:00","last_updated":"2025-11-16T20:55:05.699805+00:00","context":{"id":"01KA776CQ3N95TAVNRW31K3DBY","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": 63,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.lenovo_tb_x104f_battery_state","state":"charging","attributes":{"options":["charging","discharging","full","not_charging"],"device_class":"enum","icon":"mdi:battery-plus","friendly_name":"Lenovo TB-X104F Battery state"},"last_changed":"2025-11-16T20:55:05.700546+00:00","last_reported":"2025-11-16T20:55:05.700546+00:00","last_updated":"2025-11-16T20:55:05.700546+00:00","context":{"id":"01KA776CQ4NY859D92M12ZGD19","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "charging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.lenovo_tb_x104f_charger_type","state":"usb","attributes":{"options":["ac","usb","wireless","dock","none"],"device_class":"enum","icon":"mdi:usb-port","friendly_name":"Lenovo TB-X104F Charger type"},"last_changed":"2025-11-16T20:55:05.701689+00:00","last_reported":"2025-11-16T20:55:05.701689+00:00","last_updated":"2025-11-16T20:55:05.701689+00:00","context":{"id":"01KA776CQ5QCTVD9HZ2S3C9H03","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "usb",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2025-11-16T20:55:06.752025+00:00","last_reported":"2025-11-16T20:55:06.752025+00:00","last_updated":"2025-11-16T20:55:06.752025+00:00","context":{"id":"01KA776DR0C26GEAXDPX4FZRXJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"media_player.lg_webos_tv_oled55b8pla","state":"on","attributes":{"source_list":["AirPlay","Ajoitustoiminto","Allente","Apple TV","Bluetooth-äänentoisto","Disney+","GALLERIA","HDMI 1","HDMI 2","HDMI 3","HDMI 4","Ilmoitukset","Kuva ja video","Käytettävyys","Käyttöopas","LG Content Store","LG Remote -palvelu","Laitteen yhdistäjä","Live TV","MH IPTV","MTV Katsomo","Max","Moninäkymä","Musiikki","Netflix","Prime Video","Ruutu","Screen Share","Spotify – musiikkia ja podcasteja","TV-opas","Tallenteet","Verkkoselain","Viaplay","Yle Areena","YouTube","discovery+ : Katso TV-sarjoja"],"volume_level":0.11,"is_volume_muted":false,"source":"HDMI 3","sound_output":"tv_speaker","assumed_state":true,"device_class":"tv","entity_picture":"/api/media_player_proxy/media_player.lg_webos_tv_oled55b8pla?token=a9985ab48ea902b85587d1f74d37d205e7af8f70a5fcae0777ac90cd514468c0&cache=d4e6477300996953","friendly_name":"LG webOS TV OLED55B8PLA","supported_features":24381},"last_changed":"2025-11-16T20:55:07.458868+00:00","last_reported":"2025-11-16T20:55:07.459144+00:00","last_updated":"2025-11-16T20:55:07.458868+00:00","context":{"id":"01KA776EE21DWAH1MJPBMZPH1X","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.xiaomi_miot_auto_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v1.1.1","in_progress":false,"latest_version":"v1.1.1","release_summary":null,"release_url":"https://github.com/al-one/hass-xiaomi-miot/releases/v1.1.1","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/xiaomi_miot/icon.png","friendly_name":"Xiaomi Miot update","supported_features":23},"last_changed":"2025-11-16T20:55:07.473656+00:00","last_reported":"2025-11-16T20:55:07.473656+00:00","last_updated":"2025-11-16T20:55:07.473656+00:00","context":{"id":"01KA776EEHFVT1G1N2PVA1K318","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.apexcharts_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.2.3","in_progress":false,"latest_version":"v2.2.3","release_summary":null,"release_url":"https://github.com/RomRider/apexcharts-card/releases/v2.2.3","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"apexcharts-card update","supported_features":23},"last_changed":"2025-11-16T20:55:07.474200+00:00","last_reported":"2025-11-16T20:55:07.474200+00:00","last_updated":"2025-11-16T20:55:07.474200+00:00","context":{"id":"01KA776EEJT1CYDW50E6N66CZ7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.button_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v7.0.1","in_progress":false,"latest_version":"v7.0.1","release_summary":null,"release_url":"https://github.com/custom-cards/button-card/releases/v7.0.1","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"button-card update","supported_features":23},"last_changed":"2025-11-16T20:55:07.474627+00:00","last_reported":"2025-11-16T20:55:07.474627+00:00","last_updated":"2025-11-16T20:55:07.474627+00:00","context":{"id":"01KA776EEJF2MMM3455BG882H5","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.zigbee2mqtt_networkmap_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v0.10.0","in_progress":false,"latest_version":"v0.10.0","release_summary":null,"release_url":"https://github.com/azuwis/zigbee2mqtt-networkmap/releases/v0.10.0","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"Zigbee2mqtt Networkmap Card update","supported_features":23},"last_changed":"2025-11-16T20:55:07.475041+00:00","last_reported":"2025-11-16T20:55:07.475041+00:00","last_updated":"2025-11-16T20:55:07.475041+00:00","context":{"id":"01KA776EEK6P3NF9ZR02VX3ARH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.mini_graph_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v0.13.0","in_progress":false,"latest_version":"v0.13.0","release_summary":null,"release_url":"https://github.com/kalkih/mini-graph-card/releases/v0.13.0","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"mini-graph-card update","supported_features":23},"last_changed":"2025-11-16T20:55:07.475397+00:00","last_reported":"2025-11-16T20:55:07.475397+00:00","last_updated":"2025-11-16T20:55:07.475397+00:00","context":{"id":"01KA776EEKSGJ94B83ARXW402G","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.state_switch_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"1.9.6","in_progress":false,"latest_version":"1.9.6","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-state-switch/releases/1.9.6","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"state-switch update","supported_features":23},"last_changed":"2025-11-16T20:55:07.475754+00:00","last_reported":"2025-11-16T20:55:07.475754+00:00","last_updated":"2025-11-16T20:55:07.475754+00:00","context":{"id":"01KA776EEK4RHK6VZCQTZJTWG8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.browser_mod_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.6.4","in_progress":false,"latest_version":"v2.6.4","release_summary":null,"release_url":"https://github.com/thomasloven/hass-browser_mod/releases/v2.6.4","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/browser_mod/icon.png","friendly_name":"browser_mod update","supported_features":23},"last_changed":"2025-11-16T20:55:07.476082+00:00","last_reported":"2025-11-16T20:55:07.476082+00:00","last_updated":"2025-11-16T20:55:07.476082+00:00","context":{"id":"01KA776EEMK6ZEGFDQMN63PEKM","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.clock_weather_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.9.1","in_progress":false,"latest_version":"v2.9.1","release_summary":null,"release_url":"https://github.com/pkissling/clock-weather-card/releases/v2.9.1","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"Clock Weather Card update","supported_features":23},"last_changed":"2025-11-16T20:55:07.479016+00:00","last_reported":"2025-11-16T20:55:07.479016+00:00","last_updated":"2025-11-16T20:55:07.479016+00:00","context":{"id":"01KA776EEQ1RWR36MAZBXKYSBP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.card_mod_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v3.4.6","in_progress":false,"latest_version":"v3.4.6","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-card-mod/releases/v3.4.6","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"card-mod update","supported_features":23},"last_changed":"2025-11-16T20:55:07.479585+00:00","last_reported":"2025-11-16T20:55:07.479585+00:00","last_updated":"2025-11-16T20:55:07.479585+00:00","context":{"id":"01KA776EEQD1Z7F0N1W60QVBN8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.template_entity_row_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v1.4.1","in_progress":false,"latest_version":"v1.4.1","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-template-entity-row/releases/v1.4.1","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"template-entity-row update","supported_features":23},"last_changed":"2025-11-16T20:55:07.479949+00:00","last_reported":"2025-11-16T20:55:07.479949+00:00","last_updated":"2025-11-16T20:55:07.479949+00:00","context":{"id":"01KA776EEQ214TT641AR53BPS9","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.vacuum_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.11.0","in_progress":false,"latest_version":"v2.11.0","release_summary":null,"release_url":"https://github.com/denysdovhan/vacuum-card/releases/v2.11.0","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"Vacuum Card update","supported_features":23},"last_changed":"2025-11-16T20:55:07.480383+00:00","last_reported":"2025-11-16T20:55:07.480383+00:00","last_updated":"2025-11-16T20:55:07.480383+00:00","context":{"id":"01KA776EERX2E48PF6MRBVPM2Y","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.hacs_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"2.0.5","in_progress":false,"latest_version":"2.0.5","release_summary":null,"release_url":"https://github.com/hacs/integration/releases/2.0.5","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/hacs/icon.png","friendly_name":"HACS update","supported_features":23},"last_changed":"2025-11-16T20:55:07.480778+00:00","last_reported":"2025-11-16T20:55:07.480778+00:00","last_updated":"2025-11-16T20:55:07.480778+00:00","context":{"id":"01KA776EERYHNREHXYK3Q5CGH9","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.fold_entity_row_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v.2.3.2","in_progress":false,"latest_version":"v.2.3.2","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-fold-entity-row/releases/v.2.3.2","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"fold-entity-row update","supported_features":23},"last_changed":"2025-11-16T20:55:07.481230+00:00","last_reported":"2025-11-16T20:55:07.481230+00:00","last_updated":"2025-11-16T20:55:07.481230+00:00","context":{"id":"01KA776EES4F29NK3Q10YAM7XE","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.tapo_cameras_control_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"7.0.2","in_progress":false,"latest_version":"7.0.2","release_summary":null,"release_url":"https://github.com/JurajNyiri/HomeAssistant-Tapo-Control/releases/7.0.2","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/tapo_control/icon.png","friendly_name":"Tapo: Cameras Control update","supported_features":23},"last_changed":"2025-11-16T20:55:07.481629+00:00","last_reported":"2025-11-16T20:55:07.481629+00:00","last_updated":"2025-11-16T20:55:07.481629+00:00","context":{"id":"01KA776EESSK8W3EVYEH39FY1K","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.nordpool_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"0.0.17","in_progress":false,"latest_version":"0.0.17","release_summary":null,"release_url":"https://github.com/custom-components/nordpool/releases/0.0.17","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/nordpool/icon.png","friendly_name":"nordpool update","supported_features":23},"last_changed":"2025-11-16T20:55:07.482111+00:00","last_reported":"2025-11-16T20:55:07.482111+00:00","last_updated":"2025-11-16T20:55:07.482111+00:00","context":{"id":"01KA776EETBDX52MM9RCMKK6J5","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.layout_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.4.7","in_progress":false,"latest_version":"v2.4.7","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-layout-card/releases/v2.4.7","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"layout-card update","supported_features":23},"last_changed":"2025-11-16T20:55:07.482490+00:00","last_reported":"2025-11-16T20:55:07.482490+00:00","last_updated":"2025-11-16T20:55:07.482490+00:00","context":{"id":"01KA776EET4TM0CS0JEVK0Q69V","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.lattialammitys_paalle","state":"on","attributes":{"id":"1744379375329","last_triggered":"2025-06-20T05:48:24.698475+00:00","mode":"single","current":0,"friendly_name":"KPH Lattialämmitys päälle"},"last_changed":"2025-11-16T20:55:08.994866+00:00","last_reported":"2025-11-16T20:55:08.994866+00:00","last_updated":"2025-11-16T20:55:08.994866+00:00","context":{"id":"01KA776FY237DHJD9V0J06PE6D","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.lattialammitys_pois","state":"on","attributes":{"id":"1744379400610","last_triggered":"2025-06-18T06:29:29.642616+00:00","mode":"single","current":0,"friendly_name":"KPH Lattialämmitys pois"},"last_changed":"2025-11-16T20:55:08.995357+00:00","last_reported":"2025-11-16T20:55:08.995357+00:00","last_updated":"2025-11-16T20:55:08.995357+00:00","context":{"id":"01KA776FY3VHDBP51TP5YEASTN","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.ulkovalo_paalle_ja_pois_liiketunnistuksesta","state":"off","attributes":{"id":"1744653922612","last_triggered":"2025-05-16T18:15:31.203170+00:00","mode":"single","current":0,"friendly_name":"Ulkovalo päälle ja pois liiketunnistuksesta"},"last_changed":"2025-11-16T20:55:08.995666+00:00","last_reported":"2025-11-16T20:55:08.995666+00:00","last_updated":"2025-11-16T20:55:08.995666+00:00","context":{"id":"01KA776FY3PMFGR26N747XGK84","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.iv_huoneen_lattialammitys_pois","state":"on","attributes":{"id":"1746728830890","last_triggered":"2025-06-19T01:20:33.384949+00:00","mode":"single","current":0,"friendly_name":"IV Huoneen Lattialämmitys pois"},"last_changed":"2025-11-16T20:55:08.995988+00:00","last_reported":"2025-11-16T20:55:08.995988+00:00","last_updated":"2025-11-16T20:55:08.995988+00:00","context":{"id":"01KA776FY3RBAAFJ1XBARY7A7W","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.iv_huoneen_lattialammitys_paalle","state":"on","attributes":{"id":"1746728987493","last_triggered":"2025-06-18T21:27:43.874521+00:00","mode":"single","current":0,"friendly_name":"IV Huoneen Lattialämmitys Päälle"},"last_changed":"2025-11-16T20:55:08.996275+00:00","last_reported":"2025-11-16T20:55:08.996275+00:00","last_updated":"2025-11-16T20:55:08.996275+00:00","context":{"id":"01KA776FY427ANVB98NCX2T46C","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.intelligent_update_of_electricity_price_sensor","state":"on","attributes":{"id":"1669453089221","last_triggered":"2025-06-20T18:00:00.360329+00:00","mode":"single","current":0,"friendly_name":"Intelligent update of electricity price sensor"},"last_changed":"2025-11-16T20:55:08.996700+00:00","last_reported":"2025-11-16T20:55:08.996700+00:00","last_updated":"2025-11-16T20:55:08.996700+00:00","context":{"id":"01KA776FY45S4EZXWPMRKHWX86","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.shf_validate_price_modifiers","state":"on","attributes":{"id":"1671178061951","last_triggered":null,"mode":"single","current":0,"friendly_name":"SHF: Validate Price modifiers"},"last_changed":"2025-11-16T20:55:08.997411+00:00","last_reported":"2025-11-16T20:55:08.997411+00:00","last_updated":"2025-11-16T20:55:08.997411+00:00","context":{"id":"01KA776FY5Q2XBNWGQ907G9B3Q","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.zigbee2mqtt_bridge_connection_state","state":"on","attributes":{"device_class":"connectivity","friendly_name":"Zigbee2MQTT Bridge Connection state"},"last_changed":"2025-11-16T20:55:10.665756+00:00","last_reported":"2025-11-16T20:55:10.665756+00:00","last_updated":"2025-11-16T20:55:10.665756+00:00","context":{"id":"01KA776HJ93BMWDNC39C6YGKN7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"button.zigbee2mqtt_bridge_restart","state":"unknown","attributes":{"device_class":"restart","friendly_name":"Zigbee2MQTT Bridge Restart"},"last_changed":"2025-11-16T20:55:10.665481+00:00","last_reported":"2025-11-16T20:55:10.665481+00:00","last_updated":"2025-11-16T20:55:10.665481+00:00","context":{"id":"01KA776HJ9A0DGE2KCNQR78Y6G","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"select.zigbee2mqtt_bridge_log_level","state":"info","attributes":{"options":["error","warning","info","debug"],"friendly_name":"Zigbee2MQTT Bridge Log level"},"last_changed":"2025-11-16T20:55:10.670192+00:00","last_reported":"2025-11-16T20:55:10.670192+00:00","last_updated":"2025-11-16T20:55:10.670192+00:00","context":{"id":"01KA776HJETNYCC9K8WPK3NJD1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.zigbee2mqtt_bridge_version","state":"2.4.0","attributes":{"icon":"mdi:zigbee","friendly_name":"Zigbee2MQTT Bridge Version"},"last_changed":"2025-11-16T20:55:10.670376+00:00","last_reported":"2025-11-16T20:55:10.670376+00:00","last_updated":"2025-11-16T20:55:10.670376+00:00","context":{"id":"01KA776HJEKZJTH6XXCZ7NGFEA","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2.4.0",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_temperature","state":"23.63","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"KPH Lämpö anturi Temperature"},"last_changed":"2025-11-16T21:05:09.051894+00:00","last_reported":"2025-11-16T21:05:09.051894+00:00","last_updated":"2025-11-16T21:05:09.051894+00:00","context":{"id":"01KA77RSXVY28MSZWSKK80PVKR","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "23.63",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_humidity","state":"65.22","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"humidity","friendly_name":"KPH Lämpö anturi Humidity"},"last_changed":"2025-11-16T20:56:22.310817+00:00","last_reported":"2025-11-16T20:56:22.310817+00:00","last_updated":"2025-11-16T20:56:22.310817+00:00","context":{"id":"01KA778QH61T212BRPJJGCJZ1R","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "65.22",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_pressure","state":"29.2110594813592","attributes":{"state_class":"measurement","unit_of_measurement":"inHg","device_class":"atmospheric_pressure","friendly_name":"KPH Lämpö anturi Atmospheric pressure"},"last_changed":"2025-11-16T20:55:48.044066+00:00","last_reported":"2025-11-16T20:55:48.044066+00:00","last_updated":"2025-11-16T20:55:48.044066+00:00","context":{"id":"01KA777P2CNBRFJEZBH26GJ62A","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "989.2",
+        "native_unit_of_measurement": "hPa"
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_device_temperature","state":"73.4","attributes":{"state_class":"measurement","unit_of_measurement":"°F","device_class":"temperature","friendly_name":"KPH Lämpö anturi Temperature"},"last_changed":"2025-11-16T20:55:48.044192+00:00","last_reported":"2025-11-16T20:55:48.044192+00:00","last_updated":"2025-11-16T20:55:48.044192+00:00","context":{"id":"01KA777P2C0NFYHAAKXMQGQ6CF","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "23",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_battery","state":"67","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"KPH Lämpö anturi Battery"},"last_changed":"2025-11-16T20:55:48.044602+00:00","last_reported":"2025-11-16T20:55:48.044602+00:00","last_updated":"2025-11-16T20:55:48.044602+00:00","context":{"id":"01KA777P2CNEPCWGTHVR40ZQHG","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "67",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_voltage","state":"2951","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"KPH Lämpö anturi Voltage"},"last_changed":"2025-11-16T20:55:48.043911+00:00","last_reported":"2025-11-16T20:55:48.043911+00:00","last_updated":"2025-11-16T20:55:48.043911+00:00","context":{"id":"01KA777P2BP59Y640WDSMZNT6D","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2951",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.zigbee2mqtt_bridge_permit_join","state":"off","attributes":{"icon":"mdi:human-greeting-proximity","friendly_name":"Zigbee2MQTT Bridge Permit join"},"last_changed":"2025-11-16T20:55:10.669930+00:00","last_reported":"2025-11-16T20:55:10.669930+00:00","last_updated":"2025-11-16T20:55:10.669930+00:00","context":{"id":"01KA776HJDVMQS4F2Q2BPK9206","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    },
+    {
+      "state": {"entity_id":"update.kylpyhuoneen_lampo_ja_kosteus_mittari","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"-1","in_progress":false,"latest_version":"-1","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"KPH Lämpö anturi","supported_features":5},"last_changed":"2025-11-16T20:55:48.044421+00:00","last_reported":"2025-11-16T20:55:48.044421+00:00","last_updated":"2025-11-16T20:55:48.044421+00:00","context":{"id":"01KA777P2C631QXXQSARY3D4AQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-11-16T21:10:11.983384+00:00"
+    }
+  ]
+}

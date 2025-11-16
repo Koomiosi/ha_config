@@ -1,0 +1,99 @@
+- id: '1744379375329'
+  alias: KPH Lattialämmitys päälle
+  description: ''
+  triggers:
+  - value_template: "{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') |
+      float\n   < states('input_number.KPH_lattialammitys_lamporaja') | float - 1
+      }}\n"
+    trigger: template
+  conditions:
+  - condition: state
+    entity_id: switch.shellyplus1pm_a0dd6c313c70_switch_0
+    state: 'off'
+  actions:
+  - target:
+      entity_id: switch.shellyplus1pm_a0dd6c313c70_switch_0
+    action: switch.turn_on
+    data: {}
+  mode: single
+- id: '1744379400610'
+  alias: KPH Lattialämmitys pois
+  description: ''
+  triggers:
+  - value_template: "{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') |
+      float\n   > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5
+      }}\n"
+    trigger: template
+  conditions:
+  - condition: state
+    entity_id: switch.shellyplus1pm_a0dd6c313c70_switch_0
+    state: 'on'
+  actions:
+  - target:
+      entity_id: switch.shellyplus1pm_a0dd6c313c70_switch_0
+    action: switch.turn_off
+    data: {}
+  mode: single
+- id: '1744653922612'
+  alias: Ulkovalo päälle ja pois liiketunnistuksesta
+  description: Sytyttää ulkovalon kun kamera havaitsee liikettä ja sammuttaa sen 5
+    minuutin kuluttua
+  triggers:
+  - entity_id: binary_sensor.tapo_c310_c2a2_cell_motion_detection
+    from: 'off'
+    to: 'on'
+    trigger: state
+  conditions:
+  - condition: time
+    after: '20:00:00'
+    before: '23:59:00'
+  actions:
+  - target:
+      entity_id: switch.shellyplus1_10061c7a4d10_switch_0
+    action: switch.turn_on
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 3
+      seconds: 0
+      milliseconds: 0
+  - target:
+      entity_id: switch.shellyplus1_10061c7a4d10_switch_0
+    action: switch.turn_off
+    data: {}
+  mode: single
+- id: '1746728830890'
+  alias: IV Huoneen Lattialämmitys pois
+  description: ''
+  triggers:
+  - value_template: "{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') |
+      float\n   > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5
+      }}\n"
+    trigger: template
+  conditions:
+  - condition: state
+    entity_id: switch.shellyplus1pm_e465b8f2167c_switch_0
+    state: 'on'
+  actions:
+  - target:
+      entity_id: switch.shellyplus1pm_e465b8f2167c_switch_0
+    action: switch.turn_off
+    data: {}
+  mode: single
+- id: '1746728987493'
+  alias: IV Huoneen Lattialämmitys Päälle
+  description: ''
+  triggers:
+  - value_template: "{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') |
+      float\n   < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}\n"
+    trigger: template
+  conditions:
+  - condition: state
+    entity_id: switch.shellyplus1pm_e465b8f2167c_switch_0
+    state: 'off'
+  actions:
+  - target:
+      entity_id: switch.shellyplus1pm_e465b8f2167c_switch_0
+    action: switch.turn_on
+    data: {}
+  mode: single

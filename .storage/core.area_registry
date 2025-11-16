@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "minor_version": 8,
+  "key": "core.area_registry",
+  "data": {
+    "areas": [
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "living_room",
+        "labels": [],
+        "name": "Living Room",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-04-10T15:56:34.238058+00:00",
+        "modified_at": "2025-04-10T15:56:34.238067+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "kitchen",
+        "labels": [],
+        "name": "Kitchen",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-04-10T15:56:34.238537+00:00",
+        "modified_at": "2025-04-10T15:56:34.238547+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "bedroom",
+        "labels": [],
+        "name": "Bedroom",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-04-10T15:56:34.238760+00:00",
+        "modified_at": "2025-04-10T15:56:34.238766+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:shower",
+        "id": "kylpyhuone",
+        "labels": [],
+        "name": "Kylpyhuone",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-04-11T14:12:40.406365+00:00",
+        "modified_at": "2025-04-11T14:12:40.406385+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "takkahuone",
+        "labels": [],
+        "name": "Takkahuone",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-04-12T10:43:06.431315+00:00",
+        "modified_at": "2025-04-12T10:43:06.431318+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "pesuhuone",
+        "labels": [],
+        "name": "Pesuhuone",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-04-16T15:13:56.150483+00:00",
+        "modified_at": "2025-04-16T15:13:56.150493+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "iv_huone_lattialammitys",
+        "labels": [],
+        "name": "IV Huone Lattialämmitys",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-05-08T18:04:23.236392+00:00",
+        "modified_at": "2025-05-08T18:04:23.236439+00:00"
+      }
+    ]
+  }
+}

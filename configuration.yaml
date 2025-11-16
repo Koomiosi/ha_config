@@ -1,0 +1,158 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+template:
+  - sensor:
+      - name: "Pörssisähkö (snt/kWh)"
+        unit_of_measurement: "snt/kWh"
+        state: >
+          {% set euro = states('sensor.nordpool_kwh_fi_eur_3_10_0255') | float(0) %}
+          {{ (euro * 100) | round(2) }}
+  - sensor:
+      - name: "Tämän hetken sähköhinta"
+        unit_of_measurement: "snt/kWh"
+        state: >
+          {% set raw_today = state_attr('sensor.nordpool_kwh_fi_eur_3_10_0255', 'raw_today') %}
+          {% set raw_tomorrow = state_attr('sensor.nordpool_kwh_fi_eur_3_10_0255', 'raw_tomorrow') %}
+          {% set all = (raw_today + raw_tomorrow)[:24] %}
+          {% set now = now() %}
+          {% for item in all %}
+            {% set item_time = as_datetime(item.start) %}
+            {% if item_time.hour == now.hour and item_time.day == now.day %}
+              {{ (item.value * 100) | round(1) }}
+            {% endif %}
+          {% endfor %}
+
+  - sensor:
+      - name: "Pesukone tila ja jäljellä oleva aika"
+        state: >
+          {% set completion_time = states('sensor.pesukone_completion_time') %}
+          {% set current_time = now() %}
+
+          {% if is_state('binary_sensor.pesukone_power', 'off') %}
+            Sammuksissa
+          {% elif is_state('sensor.pesukone_machine_state', 'run') %}
+            {% set time_left = (as_timestamp(completion_time) - as_timestamp(current_time)) %}
+            {% set hours = (time_left // 3600) %}
+            {% set minutes = ((time_left % 3600) // 60) %}
+            Käynnissä - {{ hours }}h {{ minutes }}min jäljellä
+          {% elif is_state('sensor.pesukone_machine_state', 'pause') %}
+            Tauolla - {{ hours }}h {{ minutes }}min jäljellä
+          {% elif is_state('sensor.pesukone_machine_state', 'stop') %}
+            {% set stop_time = as_timestamp(completion_time) %}
+            {% if (stop_time - as_timestamp(current_time)) <= 0 %}
+              Valmis
+            {% else %}
+              {% set hours = ((stop_time - as_timestamp(current_time)) // 3600) %}
+              {% set minutes = (((stop_time - as_timestamp(current_time)) % 3600) // 60) %}
+              Valmis - {{ hours }}h {{ minutes }}min jäljellä
+            {% endif %}
+          {% else %}
+            Tuntematon
+          {% endif %}
+  - sensor:
+      - name: "Kuivauskone tila ja jäljellä oleva aika"
+        state: >
+          {% set completion_time = states('sensor.kuivauskone_completion_time') %}
+          {% set current_time = now() %}
+
+          {% if is_state('binary_sensor.kuivauskone_power', 'off') %}
+            Sammuksissa
+          {% elif is_state('sensor.kuivauskone_machine_state', 'run') %}
+            {% set time_left = (as_timestamp(completion_time) - as_timestamp(current_time)) %}
+            {% set hours = (time_left // 3600) %}
+            {% set minutes = ((time_left % 3600) // 60) %}
+            Käynnissä - {{ hours }}h {{ minutes }}min jäljellä
+          {% elif is_state('sensor.kuivauskone_machine_state', 'pause') %}
+            Tauolla - {{ hours }}h {{ minutes }}min jäljellä
+          {% elif is_state('sensor.kuivauskone_machine_state', 'stop') %}
+            {% set stop_time = as_timestamp(completion_time) %}
+            {% if (stop_time - as_timestamp(current_time)) <= 0 %}
+              Valmis
+            {% else %}
+              {% set hours = ((stop_time - as_timestamp(current_time)) // 3600) %}
+              {% set minutes = (((stop_time - as_timestamp(current_time)) % 3600) // 60) %}
+              Valmis - {{ hours }}h {{ minutes }}min jäljellä
+            {% endif %}
+          {% else %}
+            Tuntematon
+          {% endif %}
+
+sensor:
+  - platform: time_date
+    display_options:
+      - "time"
+      - "date"
+
+input_select:
+  electricity_price_view:
+    name: Pörssisähkön näkymä
+    options:
+      - Tänään
+      - Huomenna
+    initial: Tänään
+    icon: mdi:chart-bar
+
+input_number:
+  kph_lattialammitys_lamporaja:
+    name: KPH Lattialämmityksen lämpöraja
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: "°C"
+    mode: box
+  iv_lattialammitys_lamporaja:
+    name: IV Lattialämmityksen lämpöraja
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: "°C"
+    mode: box
+
+lovelace:
+  resources:
+    - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+      type: module
+    - url: /hacsfiles/apexcharts-card/apexcharts-card.js
+      type: module
+    - url: /hacsfiles/state-switch/state-switch.js
+      type: module
+    - url: /hacsfiles/button-card/button-card.js
+      type: module
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js
+      type: module
+    - url: /hacsfiles/lovelace-template-entity-row/template-entity-row.js
+      type: module
+    - url: /hacsfiles/vacuum-card/vacuum-card.js
+      type: module
+    - url: /local/clock-weather-card.js
+      type: module
+
+camera:
+  - platform: generic
+    name: Tapo C310
+    still_image_url: "http://192.168.1.86/stream/snapshot.jpg"
+    stream_source: "rtsp://Koomis:Keltsumaatti9876789@192.168.1.86:554/stream1"
+
+homeassistant:
+  customize: !include customize.yaml
+  packages: # NEW AND IMPORTANT ROW, NOTE INDENTATION
+    pack_1: !include spot-price.yaml # NEW AND IMPORTANT ROW, NOTE INDENTATION
+  # There might be code here. Leave it as is.
+
+browser_mod:
+  prefix: "browser_mod"
+
+weather:
+  - platform: met
+    name: forecast_home

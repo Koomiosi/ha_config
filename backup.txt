@@ -1,0 +1,260 @@
+- type: markdown
+        content: |
+          ## {{ now().strftime('%H:%M') }}
+          #### {{ now().strftime('%A, %d.%m.%Y') }}
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            text-align: center;
+            box-shadow: none;
+            border-radius: 12px;
+          }
+
+      - type: weather-forecast
+        entity: weather.forecast_home
+        name: Sääennuste
+        show_forecast: false
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border-radius: 12px;
+          }
+
+      - type: sensor
+        entity: sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_temperature
+        name: Kylpyhuoneen lämpötila
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border-radius: 12px;
+          }
+
+      - type: sensor
+        entity: sensor.kylpyhuoneen_lampo_ja_kosteus_mittari_humidity
+        name: Kylpyhuoneen kosteus
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border-radius: 12px;
+          }
+
+      - type: picture-glance
+        title: Ulkokamera
+        entities:
+          - camera.tapo_c310_c2a2_hd_stream
+        camera_image: camera.tapo_c310_c2a2_hd_stream
+        camera_view: live
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+          }
+
+      - type: button
+        entity: switch.tapo_c310_c2a2_privacy
+        name: Kamera päälle/pois
+        tap_action:
+          action: toggle
+        icon: mdi:cctv
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border-radius: 12px;
+          }
+
+      - type: button
+        entity: switch.shellyplus1_10061c7a4d10_switch_0
+        name: Ulkovalo
+        tap_action:
+          action: toggle
+        icon: mdi:lightbulb-on-outline
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border-radius: 12px;
+          }
+
+      - type: custom:button-card
+        entity: sensor.pesukone_completion_time
+        name: Pesukone
+        show_state: true
+        icon: mdi:washing-machine
+        styles:
+          card:
+            - background-color: >
+                [[[ 
+                  if (entity.state == 'finish') return '#4CAF50';
+                  if (['wash', 'rinse', 'dry'].includes(entity.state)) return '#2196F3';
+                  return '#9E9E9E';
+                ]]]
+            - color: white
+            - font-size: 16px
+            - text-align: center
+            - background: rgba(0, 0, 0, 0.3)
+            - box-shadow: none
+          icon:
+            - color: white
+          name:
+            - font-weight: bold
+          state:
+            - font-size: 14px
+        state_display: >
+          [[[ 
+            if (entity.state == 'finish') return "Valmis";
+            if (['wash', 'rinse', 'dry'].includes(entity.state)) return "Käynnissä";
+            if (entity.state == 'none') return "Odottaa";
+            if (entity.state == 'unknown' || entity.state === null) return "Ei tietoa";
+            
+            const target = new Date(states['sensor.pesukone_completion_time'].state);
+            const now = new Date();
+            const diffMs = target - now;
+            if (diffMs <= 0) return "Valmis";
+            const mins = Math.floor(diffMs / 60000);
+            return `${mins} min jäljellä`;
+          ]]]
+
+      - type: custom:button-card
+        entity: sensor.kuivauskone_job_state
+        name: Kuivauskone
+        show_state: true
+        icon: mdi:tumble-dryer
+        styles:
+          card:
+            - background-color: >
+                [[[ 
+                  if (entity.state == 'finish') return '#4CAF50';
+                  if (['drying', 'cooling'].includes(entity.state)) return '#2196F3';
+                  return '#9E9E9E';
+                ]]]
+            - color: white
+            - font-size: 16px
+            - text-align: center
+            - background: rgba(0, 0, 0, 0.3)
+            - box-shadow: none
+          icon:
+            - color: white
+          name:
+            - font-weight: bold
+          state:
+            - font-size: 14px
+        state_display: >
+          [[[ 
+            if (entity.state == 'finish') return "Valmis";
+            if (['drying', 'cooling'].includes(entity.state)) return "Käynnissä";
+            if (entity.state == 'none') return "Odottaa";
+            if (entity.state == 'unknown' || entity.state === null) return "Ei tietoa";
+            
+            const completionTime = states['sensor.kuivauskone_completion_time'] ? states['sensor.kuivauskone_completion_time'].state : null;
+            
+            if (!completionTime || completionTime === 'unknown' || completionTime === 'null') {
+              return "Ei tietoa";
+            }
+            
+            const target = new Date(completionTime);
+            const now = new Date();
+            const diffMs = target - now;
+            
+            if (diffMs <= 0) return "Valmis";
+            
+            const mins = Math.floor(diffMs / 60000);
+            return `${mins} min jäljellä`;
+          ]]]
+
+      - type: custom:layout-card
+        layout_type: custom:vertical-layout
+        layout:
+          max_width: 300px
+          margin: auto
+          width: 100%
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: markdown
+                content: |
+                  {% set prices = state_attr('sensor.nordpool_kwh_fi_eur_3_10_0255', 'raw_today') + state_attr('sensor.nordpool_kwh_fi_eur_3_10_0255', 'raw_tomorrow') %}
+                  {% set cents = prices[:24] | map(attribute='value') | map('multiply', 100) | list %}
+                  {% set min = cents | min | round(1) %}
+                  {% set max = cents | max | round(1) %}
+                  {% set avg = (cents | sum / cents | count) | round(1) %}
+                  **Min:** {{ min }} snt &nbsp;&nbsp; **Keski:** {{ avg }} snt &nbsp;&nbsp; **Max:** {{ max }} snt
+                style: |
+                  ha-card {
+                    background: rgba(0, 0, 0, 0.3);
+                    color: white;
+                    font-size: 14px;
+                    font-weight: bold;
+                    border-radius: 12px;
+                    padding: 12px;
+                  }
+
+      - type: custom:apexcharts-card
+        header:
+          title: Sähkön hinta (snt/kWh)
+          show: true
+        graph_span: 24h
+        span:
+          start: day
+          offset: +0h
+        apex_config:
+          chart:
+            type: bar
+            height: 300
+          plotOptions:
+            bar:
+              columnWidth: 80%
+          xaxis:
+            type: category
+            labels:
+              rotate: -45
+              style:
+                colors: white
+          yaxis:
+            title:
+              text: "Hinta (snt/kWh)"
+              style:
+                color: white
+            labels:
+              formatter: |
+                EVAL:(value) => `${value.toFixed(1)}`
+              style:
+                colors: white
+          tooltip:
+            y:
+              formatter: |
+                EVAL:(value) => `${value.toFixed(2)} snt/kWh`
+          fill:
+            opacity: 0.8
+          colors:
+            - "#f9d71c"
+        style: |
+          ha-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            border-radius: 12px;
+            padding: 12px;
+          }
+        series:
+          - entity: sensor.nordpool_kwh_fi_eur_3_10_0255
+            name: Hinta
+            type: column
+            data_generator: |
+              const rawToday = entity.attributes.raw_today || [];
+              const rawTomorrow = entity.attributes.raw_tomorrow || [];
+              const data = rawToday.concat(rawTomorrow).slice(0, 24);
+              const now = new Date();
+              return data.map((entry) => {
+                const date = new Date(entry.start);
+                const hour = date.getHours().toString().padStart(2, '0');
+                const isCurrent = now.getHours() === date.getHours() && now.getDate() === date.getDate();
+                return {
+                  x: `${hour}:00`,
+                  y: entry.value * 100,
+                  color: isCurrent ? '#4CAF50' : undefined
+                };
+              });

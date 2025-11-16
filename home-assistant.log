@@ -1,0 +1,305 @@
+2025-11-16 22:54:54.183 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tapo_control which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.186 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.188 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.190 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.192 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration xiaomi_miot which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:57.474 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
+2025-11-16 22:55:03.670 ERROR (MainThread) [homeassistant.helpers.config_validation] The browser_mod integration does not support any configuration parameters, got {'prefix': 'browser_mod'}. Please remove the configuration parameters from your configuration.
+2025-11-16 22:55:04.042 ERROR (MainThread) [homeassistant.components.weather] The met platform for the weather integration does not support platform setup. Please remove it from your config.
+2025-11-16 22:55:05.577 ERROR (MainThread) [homeassistant.components.camera] The generic platform for the camera integration does not support platform setup. Please remove it from your config.
+2025-11-16 22:55:11.953 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f540a1940>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:55:11.990 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f5a87e0c0> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f5a87e0c0>>>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 661, in state
+    numerical_value = int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 664, in state
+    numerical_value = float(value)
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1576, in async_fire_internal
+    self._hass.async_run_hass_job(job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 938, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1437, in __call__
+    self.hass.async_run_hass_job(self.listener_job, event)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 938, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/start.py", line 44, in _matched_event
+    hass.async_run_hass_job(at_start_job, hass)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 938, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 531, in _async_template_startup
+    result_info.async_refresh()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1132, in async_refresh
+    self._refresh(None)
+    ~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/event.py", line 1318, in _refresh
+    self.hass.async_run_hass_job(self._job, event, updates)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 938, in async_run_hass_job
+    hassjob.target(*args)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/template/template_entity.py", line 477, in _handle_results
+    self.async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1019, in async_write_ha_state
+    self._async_write_ha_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1141, in _async_write_ha_state
+    self.__async_calculate_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1081, in __async_calculate_state
+    state = self._stringify_state(available)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1025, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 668, in state
+    raise ValueError(
+    ...<5 lines>...
+    ) from err
+ValueError: Sensor sensor.taman_hetken_sahkohinta has device class 'None', state class 'None' unit 'snt/kWh' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
+2025-11-16 22:55:12.058 ERROR (MainThread) [homeassistant.components.template.template_entity] TemplateError('ZeroDivisionError: float division by zero') while processing template 'Template<template=({% set output = namespace(value=[]) %} {% for pnow in state_attr("sensor.shf_electricity_price_now", "today_prices") %}
+  {% set pmin = state_attr("sensor.shf_electricity_price_now", "today_min") | float %}
+  {% set pmax = state_attr("sensor.shf_electricity_price_now", "today_max") | float %}
+  {% set value = max(min((2*(pmax - pnow) / (pmax - pmin)-1) * states('input_number.shf_control_function_factor') | float,1),-1) %}
+  {% if states("input_select.shf_control_function" ) == "Linear"  %}
+    {% set output.value = output.value + [value | round(2)] %}
+  {% else %}
+    {% set output.value = output.value + [sin(value*pi/2) | round(2)] %}
+  {% endif %}
+{% endfor %} {{ output.value }}) renders=2>' for attribute 'today_values' in entity 'sensor.shf_control_factor_1'
+2025-11-16 22:55:12.951 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'KPH Lattialämmitys päälle': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   < states('input_number.KPH_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
+2025-11-16 22:55:12.952 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   < states('input_number.KPH_lattialammitys_lamporaja') | float - 1 }}) renders=3>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
+    return float(value)
+ValueError: could not convert string to float: 'unavailable'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 644, in async_render
+    render_result = _render_with_context(self.template, compiled, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2969, in _render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2446, in forgiving_float_filter
+    raise_no_default("float", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 1972, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   < states('input_number.KPH_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 761, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 646, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   < states('input_number.KPH_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
+2025-11-16 22:55:12.973 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'KPH Lattialämmitys pois': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
+2025-11-16 22:55:12.984 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5 }}) renders=3>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
+    return float(value)
+ValueError: could not convert string to float: 'unavailable'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 644, in async_render
+    render_result = _render_with_context(self.template, compiled, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2969, in _render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2446, in forgiving_float_filter
+    raise_no_default("float", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 1972, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 761, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 646, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+   > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
+2025-11-16 22:55:12.992 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'IV Huoneen Lattialämmitys pois': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
+2025-11-16 22:55:12.993 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5 }}) renders=3>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
+    return float(value)
+ValueError: could not convert string to float: 'unavailable'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 644, in async_render
+    render_result = _render_with_context(self.template, compiled, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2969, in _render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2446, in forgiving_float_filter
+    raise_no_default("float", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 1972, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 761, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 646, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
+2025-11-16 22:55:13.001 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'IV Huoneen Lattialämmitys Päälle': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
+2025-11-16 22:55:13.002 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}) renders=3>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
+    return float(value)
+ValueError: could not convert string to float: 'unavailable'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 644, in async_render
+    render_result = _render_with_context(self.template, compiled, **kwargs)
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2969, in _render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2446, in forgiving_float_filter
+    raise_no_default("float", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 1972, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 761, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 646, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+   < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
+2025-11-16 22:55:13.931 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:13.932 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:13.932 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:15.042 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:15.043 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:15.044 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:16.085 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f524982d0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:55:18.078 WARNING (Recorder) [homeassistant.components.sensor.recorder] The unit of sensor.nordpool_kwh_fi_eur_3_10_0255 (None) cannot be converted to the unit of previously compiled statistics (EUR/kWh). Generation of long term statistics will be suppressed unless the unit changes back to EUR/kWh or a compatible unit. Go to https://my.home-assistant.io/redirect/developer_statistics to fix this
+2025-11-16 22:55:29.458 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d8690>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:55:30.065 ERROR (MainThread) [frontend.js.modern.202505313] Uncaught error from Chrome 142.0.0.0 on Windows 10
+Error: Failed to execute 'define' on 'CustomElementRegistry': the name "clock-weather-card" has already been used with this registry
+A.define (src/scoped-custom-element-registry.ts:180:12)
+/hacsfiles/clock-weather-card/clock-weather-card.js:251:9857
+/hacsfiles/clock-weather-card/clock-weather-card.js:251:9872
+e (/hacsfiles/clock-weather-card/clock-weather-card.js:1:250)
+/hacsfiles/clock-weather-card/clock-weather-card.js:251:9802
+2025-11-16 22:55:52.592 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9a90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:56:35.842 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2da210>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:57:59.043 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f63ad51d0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:59:22.148 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9a90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:00:00.181 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 23:00:45.619 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9e50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:02:08.742 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2da350>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:03:32.213 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2da350>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:04:55.712 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d8410>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:06:18.941 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9f90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:07:42.313 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9bd0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:09:05.718 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9f90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:10:28.882 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2db4d0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:11:52.313 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2db610>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:13:15.423 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2dbd90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:14:38.842 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2dbb10>: Failed to establish a new connection: [Errno 113] Host is unreachable'))

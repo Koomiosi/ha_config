@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "repairs.issue_registry",
+  "data": {
+    "issues": [
+      {
+        "created": "2025-04-12T12:41:50.890633+00:00",
+        "dismissed_version": "2025.4.2",
+        "domain": "homeassistant",
+        "is_persistent": false,
+        "issue_id": "platform_integration_no_support_camera_generic"
+      },
+      {
+        "created": "2025-04-15T19:12:19.906795+00:00",
+        "dismissed_version": null,
+        "domain": "hacs",
+        "is_persistent": false,
+        "issue_id": "restart_required_300358676_tags/6.1.4"
+      },
+      {
+        "created": "2025-04-27T07:12:56.043633+00:00",
+        "dismissed_version": "2025.4.4",
+        "domain": "homeassistant",
+        "is_persistent": false,
+        "issue_id": "platform_integration_no_support_weather_met"
+      },
+      {
+        "created": "2025-06-08T18:26:59.898925+00:00",
+        "dismissed_version": null,
+        "domain": "hacs",
+        "is_persistent": false,
+        "issue_id": "restart_required_300358676_tags/6.1.9"
+      },
+      {
+        "created": "2025-11-16T20:50:48.547449+00:00",
+        "dismissed_version": null,
+        "domain": "hacs",
+        "is_persistent": false,
+        "issue_id": "restart_required_300358676_tags/7.0.2"
+      },
+      {
+        "created": "2025-11-16T20:50:57.234673+00:00",
+        "dismissed_version": null,
+        "domain": "hacs",
+        "is_persistent": false,
+        "issue_id": "restart_required_318182014_tags/v1.1.1"
+      }
+    ]
+  }
+}

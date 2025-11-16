@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "browser_mod.storage",
+  "data": {
+    "browsers": {
+      "165d2778-0ce977c8": {
+        "last_seen": "2025-06-09T19:40:46.777002+00:00",
+        "registered": true,
+        "locked": false,
+        "camera": false,
+        "settings": {
+          "hideSidebar": null,
+          "hideHeader": null,
+          "defaultPanel": null,
+          "defaultAction": null,
+          "sidebarPanelOrder": null,
+          "sidebarHiddenPanels": null,
+          "sidebarTitle": null,
+          "faviconTemplate": null,
+          "titleTemplate": null,
+          "hideInteractIcon": null,
+          "autoRegister": null,
+          "lockRegister": null,
+          "saveScreenState": null,
+          "overlayIcon": null,
+          "fullInteraction": null
+        },
+        "meta": "default"
+      },
+      "44acec26-ba013367": {
+        "last_seen": "2025-04-25T13:01:08.622741+00:00",
+        "registered": true,
+        "locked": false,
+        "camera": false,
+        "settings": {
+          "hideSidebar": null,
+          "hideHeader": null,
+          "defaultPanel": null,
+          "defaultAction": null,
+          "sidebarPanelOrder": null,
+          "sidebarHiddenPanels": null,
+          "sidebarTitle": null,
+          "faviconTemplate": null,
+          "titleTemplate": null,
+          "hideInteractIcon": null,
+          "autoRegister": null,
+          "lockRegister": null,
+          "saveScreenState": null,
+          "overlayIcon": null,
+          "fullInteraction": null
+        },
+        "meta": "default"
+      },
+      "ddc1d780-945205aa": {
+        "last_seen": "2025-04-25T19:24:47.001352+00:00",
+        "registered": true,
+        "locked": false,
+        "camera": false,
+        "settings": {
+          "hideSidebar": null,
+          "hideHeader": null,
+          "defaultPanel": null,
+          "defaultAction": null,
+          "sidebarPanelOrder": null,
+          "sidebarHiddenPanels": null,
+          "sidebarTitle": null,
+          "faviconTemplate": null,
+          "titleTemplate": null,
+          "hideInteractIcon": null,
+          "autoRegister": null,
+          "lockRegister": null,
+          "saveScreenState": null,
+          "overlayIcon": null,
+          "fullInteraction": null
+        },
+        "meta": "default"
+      },
+      "9c3c7336-3d9543d4": {
+        "last_seen": "2025-04-27T13:04:42.954920+00:00",
+        "registered": true,
+        "locked": false,
+        "camera": false,
+        "settings": {
+          "hideSidebar": null,
+          "hideHeader": null,
+          "defaultPanel": null,
+          "defaultAction": null,
+          "sidebarPanelOrder": null,
+          "sidebarHiddenPanels": null,
+          "sidebarTitle": null,
+          "faviconTemplate": null,
+          "titleTemplate": null,
+          "hideInteractIcon": null,
+          "autoRegister": null,
+          "lockRegister": null,
+          "saveScreenState": null,
+          "overlayIcon": null,
+          "fullInteraction": null
+        },
+        "meta": "default"
+      },
+      "ea3dd85c-97399d66": {
+        "last_seen": "2025-06-19T15:07:10.102297+00:00",
+        "registered": true,
+        "locked": false,
+        "camera": false,
+        "settings": {
+          "hideSidebar": null,
+          "hideHeader": null,
+          "defaultPanel": null,
+          "defaultAction": null,
+          "sidebarPanelOrder": null,
+          "sidebarHiddenPanels": null,
+          "sidebarTitle": null,
+          "faviconTemplate": null,
+          "titleTemplate": null,
+          "hideInteractIcon": null,
+          "autoRegister": null,
+          "lockRegister": null,
+          "saveScreenState": null,
+          "overlayIcon": null,
+          "fullInteraction": null
+        },
+        "meta": "default"
+      }
+    },
+    "version": "2.6.4",
+    "settings": {
+      "hideSidebar": null,
+      "hideHeader": null,
+      "defaultPanel": null,
+      "defaultAction": null,
+      "sidebarPanelOrder": null,
+      "sidebarHiddenPanels": null,
+      "sidebarTitle": null,
+      "faviconTemplate": null,
+      "titleTemplate": null,
+      "hideInteractIcon": null,
+      "autoRegister": null,
+      "lockRegister": null,
+      "saveScreenState": null,
+      "overlayIcon": null,
+      "fullInteraction": null
+    },
+    "user_settings": {}
+  }
+}

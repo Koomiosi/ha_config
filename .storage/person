@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "tony_kelanen",
+        "name": "Tony Kelanen",
+        "user_id": "39fe241b24c14a8dad3d4d5e1175cd21",
+        "device_trackers": [
+          "device_tracker.lenovo_tb_x104f"
+        ]
+      }
+    ]
+  }
+}

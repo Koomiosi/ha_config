@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "frontend.user_data_39fe241b24c14a8dad3d4d5e1175cd21",
+  "data": {
+    "language": {
+      "language": "fi",
+      "number_format": "language",
+      "time_format": "24",
+      "date_format": "DMY",
+      "time_zone": "server",
+      "first_weekday": "monday"
+    },
+    "core": {
+      "showAdvanced": true
+    }
+  }
+}

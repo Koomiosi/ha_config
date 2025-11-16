@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "xiaomi_miot/devices-6402422231-de.json",
+  "data": {
+    "update_time": 1744952336.0494065,
+    "devices": [
+      {
+        "did": "415784289",
+        "token": "7232414c32354c7373564b306433725a",
+        "longitude": "0.00000000",
+        "latitude": "0.00000000",
+        "name": "Kari",
+        "pid": 0,
+        "localip": "192.168.1.66",
+        "mac": "7C:25:DA:60:F4:56",
+        "ssid": "TP-link Deco",
+        "bssid": "F0:A7:31:B7:84:BE",
+        "parent_id": "",
+        "parent_model": "",
+        "show_mode": 1,
+        "model": "dreame.vacuum.mc1808",
+        "adminFlag": 1,
+        "shareFlag": 0,
+        "permitLevel": 16,
+        "isOnline": true,
+        "desc": "Device online ",
+        "extra": {
+          "isSetPincode": 0,
+          "pincodeType": 0,
+          "fw_version": "4.3.3_1122",
+          "isSubGroup": false,
+          "showGroupMember": false,
+          "split": {}
+        },
+        "uid": 6402422231,
+        "pd_id": 66181,
+        "password": "",
+        "p2p_id": "",
+        "rssi": -46,
+        "family_id": 0,
+        "reset_flag": 0,
+        "spec_type": "urn:miot-spec-v2:device:vacuum:0000A006:dreame-mc1808:1",
+        "orderTime": 1744920728,
+        "freqFlag": true,
+        "hide_mode": 0,
+        "comFlag": 129,
+        "carPicInfo": "",
+        "home_id": "850001037620",
+        "room_id": "850001099782",
+        "home_name": "",
+        "room_name": "Takkahuone"
+      }
+    ],
+    "homes": [
+      {
+        "id": "850001037620",
+        "name": "",
+        "bssid": "",
+        "dids": [],
+        "temp_dids": null,
+        "icon": "style_1_favorites",
+        "shareflag": 0,
+        "permit_level": 10,
+        "status": 1,
+        "background": "style_1",
+        "smart_room_background": "style_1_favorites",
+        "longitude": 0,
+        "latitude": 0,
+        "city_id": 0,
+        "address": "",
+        "create_time": 1640329468,
+        "roomlist": [
+          {
+            "id": "850001099784",
+            "name": "Keittiö",
+            "bssid": "",
+            "parentid": "850001037620",
+            "dids": [],
+            "icon": "more_1",
+            "background": "style_1_favorites",
+            "shareflag": 0,
+            "create_time": 1743845970
+          },
+          {
+            "id": "850001099783",
+            "name": "Lastenhuone",
+            "bssid": "",
+            "parentid": "850001037620",
+            "dids": [],
+            "icon": "more_1",
+            "background": "style_1_favorites",
+            "shareflag": 0,
+            "create_time": 1743845953
+          },
+          {
+            "id": "850001063414",
+            "name": "Living room",
+            "bssid": "",
+            "parentid": "850001037620",
+            "dids": [],
+            "icon": "more_1",
+            "background": "style_1_favorites",
+            "shareflag": 0,
+            "create_time": 1686466163
+          },
+          {
+            "id": "850001099786",
+            "name": "Olohuone",
+            "bssid": "",
+            "parentid": "850001037620",
+            "dids": [],
+            "icon": "more_1",
+            "background": "style_1_favorites",
+            "shareflag": 0,
+            "create_time": 1743846009
+          },
+          {
+            "id": "850001099785",
+            "name": "Ruokailutila",
+            "bssid": "",
+            "parentid": "850001037620",
+            "dids": [],
+            "icon": "more_1",
+            "background": "style_1_favorites",
+            "shareflag": 0,
+            "create_time": 1743845996
+          },
+          {
+            "id": "850001099782",
+            "name": "Takkahuone",
+            "bssid": "",
+            "parentid": "850001037620",
+            "dids": [
+              "415784289"
+            ],
+            "icon": "more_1",
+            "background": "style_1_favorites",
+            "shareflag": 0,
+            "create_time": 1743845930
+          },
+          {
+            "id": "850001099787",
+            "name": "Välitila",
+            "bssid": "",
+            "parentid": "850001037620",
+            "dids": [],
+            "icon": "more_1",
+            "background": "style_1_favorites",
+            "shareflag": 0,
+            "create_time": 1743846025
+          }
+        ],
+        "uid": 6402422231,
+        "appear_home_list": null,
+        "popup_flag": 0,
+        "popup_time_stamp": 0,
+        "car_did": ""
+      }
+    ]
+  }
+}

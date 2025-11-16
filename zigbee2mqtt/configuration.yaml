@@ -1,0 +1,46 @@
+version: 4
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://core-mosquitto:1883
+  user: addons
+  password: ex6eiL1ku7theelulee4aiphiF9aexeedoQuai9ov9bie7eiShey8eekeiF6modu
+serial:
+  adapter: ezsp
+advanced:
+  log_level: info
+  channel: 11
+  network_key:
+    - 100
+    - 112
+    - 134
+    - 64
+    - 184
+    - 61
+    - 160
+    - 123
+    - 184
+    - 156
+    - 131
+    - 129
+    - 13
+    - 20
+    - 48
+    - 237
+  pan_id: 30463
+  ext_pan_id:
+    - 218
+    - 136
+    - 28
+    - 188
+    - 197
+    - 119
+    - 219
+    - 7
+frontend:
+  enabled: true
+  port: 8099
+homeassistant:
+  enabled: true
+devices:
+  '0x54ef441001206982':
+    friendly_name: Kylpyhuoneen lampo ja kosteus mittari

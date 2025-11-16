@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "xiaomi_miot/auth-6402422231-de.json",
+  "data": {
+    "username": "tonykelanen@gmail.com",
+    "server_country": "de",
+    "user_id": "6402422231",
+    "service_token": "crjBjqz3DnSzrPPTxYxucfH5HzitoScqNEWfsczgekOsIgkGT7Z7EwYmhukY4FNOwuRa4cGRzp/mQrc3zlz8HAo2FcADlePi1fQ6GtvNdqSX36FzAtcY2CUuOHSnH+e28FfhLmocAMGcs9l8Kry8Sqjwggv2sdRfpMlzTf3mAFU=",
+    "ssecurity": "PrJyJIciyFqgyn/VJPgo6A==",
+    "sid": "xiaomiio",
+    "device_id": "R9XM5JUZQK6MN3IW",
+    "update_at": "2025-04-12 13:42:16"
+  }
+}

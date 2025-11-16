@@ -1,0 +1,6 @@
+vacuum.dreame_mc1808_f456_robot_cleaner:
+  fan_speed_list:
+    - Hiljainen
+    - Normaali
+    - Tehokas
+    - Turbo

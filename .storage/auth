@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "auth",
+  "data": {
+    "users": [
+      {
+        "id": "baa083dcb8a84a32b6a931bc0295b709",
+        "group_ids": [
+          "system-read-only"
+        ],
+        "is_owner": false,
+        "is_active": true,
+        "name": "Home Assistant Content",
+        "system_generated": true,
+        "local_only": false
+      },
+      {
+        "id": "5007d9d099594958982d886d65f3e282",
+        "group_ids": [
+          "system-admin"
+        ],
+        "is_owner": false,
+        "is_active": true,
+        "name": "Supervisor",
+        "system_generated": true,
+        "local_only": false
+      },
+      {
+        "id": "39fe241b24c14a8dad3d4d5e1175cd21",
+        "group_ids": [
+          "system-admin"
+        ],
+        "is_owner": true,
+        "is_active": true,
+        "name": "Tony Kelanen",
+        "system_generated": false,
+        "local_only": false
+      }
+    ],
+    "groups": [
+      {
+        "id": "system-admin",
+        "name": "Administrators"
+      },
+      {
+        "id": "system-users",
+        "name": "Users"
+      },
+      {
+        "id": "system-read-only",
+        "name": "Read Only"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "b665263ac0df48ccaa5b01a8a1f25b2c",
+        "user_id": "39fe241b24c14a8dad3d4d5e1175cd21",
+        "auth_provider_type": "homeassistant",
+        "auth_provider_id": null,
+        "data": {
+          "username": "tonykelanen@gmail.com"
+        }
+      }
+    ],
+    "refresh_tokens": [
+      {
+        "id": "2a2dc30dc4ce43a5b570fb4ce682eb0f",
+        "user_id": "baa083dcb8a84a32b6a931bc0295b709",
+        "client_id": null,
+        "client_name": null,
+        "client_icon": null,
+        "token_type": "system",
+        "created_at": "2025-04-10T15:51:16.715433+00:00",
+        "access_token_expiration": 1800.0,
+        "token": "86384760c297b17c4feb93aa239353a01fe992ca0c7bd479d7d7ec13de2686667c6a338df0e3760a6d3051d7a6fb1af39d8cd644ac52664710975d7960b4fb5f",
+        "jwt_key": "737c749fe66607932fa5bbf729749e424bbd19db06a78833638d86fd8bfe88de51fcbf1027541640c3ff5e27d7a9d542f17dcdafb02501eebefb61938b4e7017",
+        "last_used_at": null,
+        "last_used_ip": null,
+        "expire_at": null,
+        "credential_id": null,
+        "version": "2025.4.1"
+      },
+      {
+        "id": "918b6381411c4864a28e6ff4b5935a7d",
+        "user_id": "5007d9d099594958982d886d65f3e282",
+        "client_id": null,
+        "client_name": null,
+        "client_icon": null,
+        "token_type": "system",
+        "created_at": "2025-04-10T15:51:18.625420+00:00",
+        "access_token_expiration": 1800.0,
+        "token": "e9ac6828aef459bc5fea85bce7bf5f7ce128628e01a0764035901ae3dff61e983efbacd026c96750b07820a6a89a2f10c6f2c6b42af0500df194c6b4370a8905",
+        "jwt_key": "c5c30971fdafe41b48c507602dc4fd520f3e4d737a965adf107262b2db2f3adefb890e3587d23ded1c91d849479be6a03d60f31f5217d6d8640c45a0e582bb1d",
+        "last_used_at": "2025-11-16T21:01:58.561224+00:00",
+        "last_used_ip": "172.30.32.2",
+        "expire_at": null,
+        "credential_id": null,
+        "version": "2025.4.1"
+      },
+      {
+        "id": "34c51899a9894a6aad495b0a4d82fd6d",
+        "user_id": "39fe241b24c14a8dad3d4d5e1175cd21",
+        "client_id": "http://homeassistant.local:8123/",
+        "client_name": null,
+        "client_icon": null,
+        "token_type": "normal",
+        "created_at": "2025-11-16T20:40:11.709927+00:00",
+        "access_token_expiration": 1800.0,
+        "token": "fde7cd8660abb00a5f23336e9e4568195aa11bc9e374f4e4483aa8e74623de0c446263b6ce4fa0f8b58ce6c2c2081811d1edfa4db051fc362cb779a4333b1e95",
+        "jwt_key": "55dc28095dd7af20c679fbfd78e1d6f5d35682b016693c6c9e5ae2432fd2c5f0ee16cd3d9a349702df7c6ae7acb0c89ec80bc0018d15fd53061db0dee34380d3",
+        "last_used_at": "2025-11-16T20:40:11.710260+00:00",
+        "last_used_ip": "192.168.68.103",
+        "expire_at": 1771101611.71026,
+        "credential_id": "b665263ac0df48ccaa5b01a8a1f25b2c",
+        "version": "2025.5.3"
+      }
+    ]
+  }
+}

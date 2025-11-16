@@ -1,0 +1,16 @@
+[2025-06-20 19:52:51] info: 	z2m: Logging to console, file (filename: log.log)
+[2025-06-20 19:52:51] info: 	z2m: Starting Zigbee2MQTT version 2.4.0 (commit #unknown)
+[2025-06-20 19:52:51] info: 	z2m: Starting zigbee-herdsman (4.1.0)
+[2025-06-20 19:52:51] info: 	zh:adapter:discovery: Matched adapter: {"path":"/dev/ttyUSB0","manufacturer":"Itead","serialNumber":"8a8c3ce42953ef11bf7f28e0174bec31","pnpId":"usb-Itead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_V2_8a8c3ce42953ef11bf7f28e0174bec31-if00-port0","vendorId":"10c4","productId":"ea60"} => ember: path=/dev/ttyUSB0, score=4
+[2025-06-20 19:52:51] warning: 	zh:ezsp: 'ezsp' driver is deprecated and will only remain to provide support for older firmware (pre 7.4.x). Migration to 'ember' is recommended. If using Zigbee2MQTT see https://github.com/Koenkk/zigbee2mqtt/discussions/21462
+[2025-06-20 19:52:56] info: 	z2m: zigbee-herdsman started (resumed)
+[2025-06-20 19:52:56] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":"3 ","majorrel":"6","minorrel":"10","product":8,"revision":"6.10.3.0 build 297"},"type":"EZSP v8"}'
+[2025-06-20 19:52:56] info: 	z2m: Kylpyhuoneen lampo ja kosteus mittari (0x54ef441001206982): WSDCGQ12LM - Aqara Temperature and humidity sensor T1 (EndDevice)
+[2025-06-20 19:52:56] info: 	z2m: Currently 1 devices are joined.
+[2025-06-20 19:52:56] info: 	z2m: Connecting to MQTT server at mqtt://core-mosquitto:1883
+[2025-06-20 19:52:57] info: 	z2m: Connected to MQTT server
+[2025-06-20 19:52:57] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+[2025-06-20 19:52:57] info: 	z2m: Started frontend on port 8099
+[2025-06-20 19:52:57] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/Kylpyhuoneen lampo ja kosteus mittari', payload '{"battery":100,"device_temperature":23,"humidity":46.07,"linkquality":204,"power_outage_count":7,"pressure":1010.6,"temperature":23.36,"update":{"installed_version":-1,"latest_version":-1,"state":null},"voltage":3020}'
+[2025-06-20 19:52:57] info: 	z2m: Zigbee2MQTT started!
+[2025-06-20 19:53:02] info: 	z2m:mqtt: MQTT publish: topic 'homeassistant/binary_sensor/1221051039810110150109113116116_0x08b95ffffe596137/connection_state/config', payload '{"device":{"hw_version":"EZSP v8 6.10.3.0 build 297","identifiers":["zigbee2mqtt_bridge_0x08b95ffffe596137"],"manufacturer":"Zigbee2MQTT","model":"Bridge","name":"Zigbee2MQTT Bridge","sw_version":"2.4.0"},"device_class":"connectivity","entity_category":"diagnostic","name":"Connection state","object_id":"zigbee2mqtt_bridge_connection_state","origin":{"name":"Zigbee2MQTT","sw":"2.4.0","url":"https://www.zigbee2mqtt.io"},"payload_off":"offline","payload_on":"online","state_topic":"zigbee2mqtt/bridge/state","unique_id":"bridge_0x08b95ffffe596137_connection_state_zigbee2mqtt","value_template":"{{ value_json.state }}"}'
