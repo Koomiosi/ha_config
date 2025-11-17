@@ -2,5 +2,472 @@
   "version": 1,
   "minor_version": 1,
   "key": "trace.saved_traces",
-  "data": {}
+  "data": {
+    "automation.1669453089221": [
+      {
+        "extended_dict": {
+          "last_step": "condition/0",
+          "run_id": "1287063e68e4448bca044dd0df725633",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:00:00.290515+00:00",
+            "finish": "2025-11-16T21:00:00.292166+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-11-16T21:00:00.290696+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.intelligent_update_of_electricity_price_sensor",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1669453089221",
+                      "last_triggered": "2025-06-20T18:00:00.360329+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Intelligent update of electricity price sensor"
+                    },
+                    "last_changed": "2025-11-16T20:55:08.996700+00:00",
+                    "last_reported": "2025-11-16T20:55:08.996700+00:00",
+                    "last_updated": "2025-11-16T20:55:08.996700+00:00",
+                    "context": {
+                      "id": "01KA776FY45S4EZXWPMRKHWX86",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": "Trigger every 15mins",
+                    "platform": "time_pattern",
+                    "now": "2025-11-16T23:00:00.289939+02:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-11-16T21:00:00.290842+00:00",
+                "result": {
+                  "result": false,
+                  "entities": [
+                    "sensor.shf_data"
+                  ]
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1669453089221",
+            "alias": "Intelligent update of electricity price sensor",
+            "description": "Tries to fetch new data every 15mins after 14 oclock local time. Condition stops unnecessary requests. Random delay disperses API calls.",
+            "trigger": [
+              {
+                "platform": "time_pattern",
+                "minutes": "/15",
+                "alias": "Trigger every 15mins"
+              }
+            ],
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ state_attr(\"sensor.shf_data\", \"data\") | selectattr(\"Timestamp\", \"ge\", (now() + timedelta(hours=9) )| as_timestamp ) | list | length <= 0 }}",
+                "alias": "Check if there isn't data for tomorrow and time is after 14 o'clock"
+              }
+            ],
+            "action": [
+              {
+                "delay": "{{ range(60, 600)|random }}",
+                "alias": "Random delay in order to reduce API congestion"
+              },
+              {
+                "alias": "Trigger the update of the sensor",
+                "target": {
+                  "entity_id": "sensor.shf_electricity_price"
+                },
+                "action": "homeassistant.update_entity"
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01KA77FCD2J2K76MX7FJK40M7S",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "condition/0",
+          "run_id": "1287063e68e4448bca044dd0df725633",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:00:00.290515+00:00",
+            "finish": "2025-11-16T21:00:00.292166+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "condition/0",
+          "run_id": "e518e1517dd449f314d2e602914eaca0",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:15:00.290635+00:00",
+            "finish": "2025-11-16T21:15:00.292041+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-11-16T21:15:00.290783+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.intelligent_update_of_electricity_price_sensor",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1669453089221",
+                      "last_triggered": "2025-06-20T18:00:00.360329+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Intelligent update of electricity price sensor"
+                    },
+                    "last_changed": "2025-11-16T20:55:08.996700+00:00",
+                    "last_reported": "2025-11-16T20:55:08.996700+00:00",
+                    "last_updated": "2025-11-16T20:55:08.996700+00:00",
+                    "context": {
+                      "id": "01KA776FY45S4EZXWPMRKHWX86",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": "Trigger every 15mins",
+                    "platform": "time_pattern",
+                    "now": "2025-11-16T23:15:00.290185+02:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-11-16T21:15:00.290905+00:00",
+                "result": {
+                  "result": false,
+                  "entities": [
+                    "sensor.shf_data"
+                  ]
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1669453089221",
+            "alias": "Intelligent update of electricity price sensor",
+            "description": "Tries to fetch new data every 15mins after 14 oclock local time. Condition stops unnecessary requests. Random delay disperses API calls.",
+            "trigger": [
+              {
+                "platform": "time_pattern",
+                "minutes": "/15",
+                "alias": "Trigger every 15mins"
+              }
+            ],
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ state_attr(\"sensor.shf_data\", \"data\") | selectattr(\"Timestamp\", \"ge\", (now() + timedelta(hours=9) )| as_timestamp ) | list | length <= 0 }}",
+                "alias": "Check if there isn't data for tomorrow and time is after 14 o'clock"
+              }
+            ],
+            "action": [
+              {
+                "delay": "{{ range(60, 600)|random }}",
+                "alias": "Random delay in order to reduce API congestion"
+              },
+              {
+                "alias": "Trigger the update of the sensor",
+                "target": {
+                  "entity_id": "sensor.shf_electricity_price"
+                },
+                "action": "homeassistant.update_entity"
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01KA78AVA218XCK7BZ7BSW73RN",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "condition/0",
+          "run_id": "e518e1517dd449f314d2e602914eaca0",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:15:00.290635+00:00",
+            "finish": "2025-11-16T21:15:00.292041+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "condition/0",
+          "run_id": "c91e4956db78fb32e32d5e00aee9879a",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:30:00.289976+00:00",
+            "finish": "2025-11-16T21:30:00.291220+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-11-16T21:30:00.290066+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.intelligent_update_of_electricity_price_sensor",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1669453089221",
+                      "last_triggered": "2025-06-20T18:00:00.360329+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Intelligent update of electricity price sensor"
+                    },
+                    "last_changed": "2025-11-16T20:55:08.996700+00:00",
+                    "last_reported": "2025-11-16T20:55:08.996700+00:00",
+                    "last_updated": "2025-11-16T20:55:08.996700+00:00",
+                    "context": {
+                      "id": "01KA776FY45S4EZXWPMRKHWX86",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": "Trigger every 15mins",
+                    "platform": "time_pattern",
+                    "now": "2025-11-16T23:30:00.289658+02:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-11-16T21:30:00.290142+00:00",
+                "result": {
+                  "result": false,
+                  "entities": [
+                    "sensor.shf_data"
+                  ]
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1669453089221",
+            "alias": "Intelligent update of electricity price sensor",
+            "description": "Tries to fetch new data every 15mins after 14 oclock local time. Condition stops unnecessary requests. Random delay disperses API calls.",
+            "trigger": [
+              {
+                "platform": "time_pattern",
+                "minutes": "/15",
+                "alias": "Trigger every 15mins"
+              }
+            ],
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ state_attr(\"sensor.shf_data\", \"data\") | selectattr(\"Timestamp\", \"ge\", (now() + timedelta(hours=9) )| as_timestamp ) | list | length <= 0 }}",
+                "alias": "Check if there isn't data for tomorrow and time is after 14 o'clock"
+              }
+            ],
+            "action": [
+              {
+                "delay": "{{ range(60, 600)|random }}",
+                "alias": "Random delay in order to reduce API congestion"
+              },
+              {
+                "alias": "Trigger the update of the sensor",
+                "target": {
+                  "entity_id": "sensor.shf_electricity_price"
+                },
+                "action": "homeassistant.update_entity"
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01KA796A71K65ENPP80QSWGPMN",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "condition/0",
+          "run_id": "c91e4956db78fb32e32d5e00aee9879a",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:30:00.289976+00:00",
+            "finish": "2025-11-16T21:30:00.291220+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "condition/0",
+          "run_id": "f8d82f0d606b8504b20c4301a1573be9",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:45:00.290096+00:00",
+            "finish": "2025-11-16T21:45:00.291375+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-11-16T21:45:00.290197+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.intelligent_update_of_electricity_price_sensor",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1669453089221",
+                      "last_triggered": "2025-06-20T18:00:00.360329+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Intelligent update of electricity price sensor"
+                    },
+                    "last_changed": "2025-11-16T20:55:08.996700+00:00",
+                    "last_reported": "2025-11-16T20:55:08.996700+00:00",
+                    "last_updated": "2025-11-16T20:55:08.996700+00:00",
+                    "context": {
+                      "id": "01KA776FY45S4EZXWPMRKHWX86",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": "Trigger every 15mins",
+                    "platform": "time_pattern",
+                    "now": "2025-11-16T23:45:00.289654+02:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-11-16T21:45:00.290291+00:00",
+                "result": {
+                  "result": false,
+                  "entities": [
+                    "sensor.shf_data"
+                  ]
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1669453089221",
+            "alias": "Intelligent update of electricity price sensor",
+            "description": "Tries to fetch new data every 15mins after 14 oclock local time. Condition stops unnecessary requests. Random delay disperses API calls.",
+            "trigger": [
+              {
+                "platform": "time_pattern",
+                "minutes": "/15",
+                "alias": "Trigger every 15mins"
+              }
+            ],
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ state_attr(\"sensor.shf_data\", \"data\") | selectattr(\"Timestamp\", \"ge\", (now() + timedelta(hours=9) )| as_timestamp ) | list | length <= 0 }}",
+                "alias": "Check if there isn't data for tomorrow and time is after 14 o'clock"
+              }
+            ],
+            "action": [
+              {
+                "delay": "{{ range(60, 600)|random }}",
+                "alias": "Random delay in order to reduce API congestion"
+              },
+              {
+                "alias": "Trigger the update of the sensor",
+                "target": {
+                  "entity_id": "sensor.shf_electricity_price"
+                },
+                "action": "homeassistant.update_entity"
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01KA7A1S42FNAYSJ8MZBJHR9EB",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "condition/0",
+          "run_id": "f8d82f0d606b8504b20c4301a1573be9",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-11-16T21:45:00.290096+00:00",
+            "finish": "2025-11-16T21:45:00.291375+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1669453089221",
+          "trigger": "time pattern"
+        }
+      }
+    ]
+  }
 }

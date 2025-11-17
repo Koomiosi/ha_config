@@ -1,11 +1,11 @@
 {
     "0x54ef441001206982": {
-        "voltage": 2950,
-        "battery": 67,
-        "humidity": 63.18,
-        "temperature": 23.28,
-        "pressure": 989.2,
-        "linkquality": 204,
+        "voltage": 2995,
+        "battery": 97,
+        "humidity": 63.1,
+        "temperature": 22.23,
+        "pressure": 991.8,
+        "linkquality": 172,
         "device_temperature": 23,
         "power_outage_count": 7
     }

@@ -1,268 +1,14 @@
-2025-11-16 22:46:29.707 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tapo_control which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:46:29.711 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:46:29.712 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:46:29.714 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:46:29.716 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration xiaomi_miot which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:46:34.431 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
-2025-11-16 22:46:40.359 ERROR (MainThread) [homeassistant.components.weather] The met platform for the weather integration does not support platform setup. Please remove it from your config.
-2025-11-16 22:46:41.218 ERROR (MainThread) [homeassistant.helpers.config_validation] The browser_mod integration does not support any configuration parameters, got {'prefix': 'browser_mod'}. Please remove the configuration parameters from your configuration.
-2025-11-16 22:46:46.103 ERROR (MainThread) [homeassistant.components.camera] The generic platform for the camera integration does not support platform setup. Please remove it from your config.
-2025-11-16 22:46:47.371 ERROR (ImportExecutor_0) [homeassistant.loader] Unexpected exception importing component custom_components.tapo_control
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1053, in _get_component
-    ComponentProtocol, importlib.import_module(self.pkg_path)
-                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 201, in protected_loop_func
-    return func(*args, **kwargs)
-  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/config/custom_components/tapo_control/__init__.py", line 62, in <module>
-    from .utils import (
-    ...<19 lines>...
-    )
-  File "/config/custom_components/tapo_control/utils.py", line 16, in <module>
-    from pytapo.media_stream.downloader import Downloader
-  File "/usr/local/lib/python3.13/site-packages/pytapo/__init__.py", line 19, in <module>
-    from Crypto.Cipher import AES
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Cipher/AES.py", line 26, in <module>
-    from Crypto.Util._raw_api import (load_pycryptodome_raw_lib,
-                                      VoidPointer, SmartPointer,
-                                      c_size_t, c_uint8_ptr)
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Util/_raw_api.py", line 87, in <module>
-    ffi = FFI()
-  File "/usr/local/lib/python3.13/site-packages/cffi/api.py", line 54, in __init__
-    raise Exception("Version mismatch: this is the 'cffi' package version %s, located in %r.  When we import the top-level '_cffi_backend' extension module, we get version %s, located in %r.  The two versions should be equal; check your installation." % (
-        __version__, __file__,
-        backend.__version__, backend.__file__))
-Exception: Version mismatch: this is the 'cffi' package version 2.0.0, located in '/usr/local/lib/python3.13/site-packages/cffi/api.py'.  When we import the top-level '_cffi_backend' extension module, we get version 1.17.1, located in '/usr/local/lib/python3.13/site-packages/_cffi_backend.cpython-313-aarch64-linux-musl.so'.  The two versions should be equal; check your installation.
-2025-11-16 22:46:47.853 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to import_module with args ('custom_components.tapo_control',) in /usr/src/homeassistant/homeassistant/loader.py, line 1053: ComponentProtocol, importlib.import_module(self.pkg_path) inside the event loop; This is causing stability issues. Please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue
-For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#import_module
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/usr/src/homeassistant/homeassistant/__main__.py", line 227, in <module>
-    sys.exit(main())
-  File "/usr/src/homeassistant/homeassistant/__main__.py", line 213, in main
-    exit_code = runner.run(runtime_conf)
-  File "/usr/src/homeassistant/homeassistant/runner.py", line 154, in run
-    return loop.run_until_complete(setup_and_run_hass(runtime_config))
-  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 706, in run_until_complete
-    self.run_forever()
-  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 677, in run_forever
-    self._run_once()
-  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 2034, in _run_once
-    handle._run()
-  File "/usr/local/lib/python3.13/asyncio/events.py", line 89, in _run
-    self._context.run(self._callback, *self._args)
-  File "/usr/src/homeassistant/homeassistant/setup.py", line 171, in async_setup_component
-    result = await _async_setup_component(hass, domain, config)
-  File "/usr/src/homeassistant/homeassistant/setup.py", line 344, in _async_setup_component
-    component = await integration.async_get_component()
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1005, in async_get_component
-    comp = self._get_component()
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1053, in _get_component
-    ComponentProtocol, importlib.import_module(self.pkg_path)
-
-2025-11-16 22:46:47.880 ERROR (MainThread) [homeassistant.loader] Unexpected exception importing component custom_components.tapo_control
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1053, in _get_component
-    ComponentProtocol, importlib.import_module(self.pkg_path)
-                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 201, in protected_loop_func
-    return func(*args, **kwargs)
-  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/config/custom_components/tapo_control/__init__.py", line 62, in <module>
-    from .utils import (
-    ...<19 lines>...
-    )
-  File "/config/custom_components/tapo_control/utils.py", line 16, in <module>
-    from pytapo.media_stream.downloader import Downloader
-  File "/usr/local/lib/python3.13/site-packages/pytapo/__init__.py", line 19, in <module>
-    from Crypto.Cipher import AES
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Cipher/AES.py", line 26, in <module>
-    from Crypto.Util._raw_api import (load_pycryptodome_raw_lib,
-                                      VoidPointer, SmartPointer,
-                                      c_size_t, c_uint8_ptr)
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Util/_raw_api.py", line 87, in <module>
-    ffi = FFI()
-  File "/usr/local/lib/python3.13/site-packages/cffi/api.py", line 54, in __init__
-    raise Exception("Version mismatch: this is the 'cffi' package version %s, located in %r.  When we import the top-level '_cffi_backend' extension module, we get version %s, located in %r.  The two versions should be equal; check your installation." % (
-        __version__, __file__,
-        backend.__version__, backend.__file__))
-Exception: Version mismatch: this is the 'cffi' package version 2.0.0, located in '/usr/local/lib/python3.13/site-packages/cffi/api.py'.  When we import the top-level '_cffi_backend' extension module, we get version 1.17.1, located in '/usr/local/lib/python3.13/site-packages/_cffi_backend.cpython-313-aarch64-linux-musl.so'.  The two versions should be equal; check your installation.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 993, in async_get_component
-    comp = await self.hass.async_add_import_executor_job(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self._get_component, True
-        ^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1064, in _get_component
-    raise ImportError(f"Exception importing {self.pkg_path}") from err
-ImportError: Exception importing custom_components.tapo_control
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1053, in _get_component
-    ComponentProtocol, importlib.import_module(self.pkg_path)
-                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 201, in protected_loop_func
-    return func(*args, **kwargs)
-  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/config/custom_components/tapo_control/__init__.py", line 62, in <module>
-    from .utils import (
-    ...<19 lines>...
-    )
-  File "/config/custom_components/tapo_control/utils.py", line 16, in <module>
-    from pytapo.media_stream.downloader import Downloader
-  File "/usr/local/lib/python3.13/site-packages/pytapo/__init__.py", line 19, in <module>
-    from Crypto.Cipher import AES
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Cipher/AES.py", line 26, in <module>
-    from Crypto.Util._raw_api import (load_pycryptodome_raw_lib,
-                                      VoidPointer, SmartPointer,
-                                      c_size_t, c_uint8_ptr)
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Util/_raw_api.py", line 87, in <module>
-    ffi = FFI()
-  File "/usr/local/lib/python3.13/site-packages/cffi/api.py", line 54, in __init__
-    raise Exception("Version mismatch: this is the 'cffi' package version %s, located in %r.  When we import the top-level '_cffi_backend' extension module, we get version %s, located in %r.  The two versions should be equal; check your installation." % (
-        __version__, __file__,
-        backend.__version__, backend.__file__))
-Exception: Version mismatch: this is the 'cffi' package version 2.0.0, located in '/usr/local/lib/python3.13/site-packages/cffi/api.py'.  When we import the top-level '_cffi_backend' extension module, we get version 1.17.1, located in '/usr/local/lib/python3.13/site-packages/_cffi_backend.cpython-313-aarch64-linux-musl.so'.  The two versions should be equal; check your installation.
-2025-11-16 22:46:48.094 ERROR (MainThread) [homeassistant.setup] Setup failed for custom integration 'tapo_control': Unable to import component: Exception importing custom_components.tapo_control
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1053, in _get_component
-    ComponentProtocol, importlib.import_module(self.pkg_path)
-                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 201, in protected_loop_func
-    return func(*args, **kwargs)
-  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/config/custom_components/tapo_control/__init__.py", line 62, in <module>
-    from .utils import (
-    ...<19 lines>...
-    )
-  File "/config/custom_components/tapo_control/utils.py", line 16, in <module>
-    from pytapo.media_stream.downloader import Downloader
-  File "/usr/local/lib/python3.13/site-packages/pytapo/__init__.py", line 19, in <module>
-    from Crypto.Cipher import AES
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Cipher/AES.py", line 26, in <module>
-    from Crypto.Util._raw_api import (load_pycryptodome_raw_lib,
-                                      VoidPointer, SmartPointer,
-                                      c_size_t, c_uint8_ptr)
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Util/_raw_api.py", line 87, in <module>
-    ffi = FFI()
-  File "/usr/local/lib/python3.13/site-packages/cffi/api.py", line 54, in __init__
-    raise Exception("Version mismatch: this is the 'cffi' package version %s, located in %r.  When we import the top-level '_cffi_backend' extension module, we get version %s, located in %r.  The two versions should be equal; check your installation." % (
-        __version__, __file__,
-        backend.__version__, backend.__file__))
-Exception: Version mismatch: this is the 'cffi' package version 2.0.0, located in '/usr/local/lib/python3.13/site-packages/cffi/api.py'.  When we import the top-level '_cffi_backend' extension module, we get version 1.17.1, located in '/usr/local/lib/python3.13/site-packages/_cffi_backend.cpython-313-aarch64-linux-musl.so'.  The two versions should be equal; check your installation.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 993, in async_get_component
-    comp = await self.hass.async_add_import_executor_job(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self._get_component, True
-        ^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1064, in _get_component
-    raise ImportError(f"Exception importing {self.pkg_path}") from err
-ImportError: Exception importing custom_components.tapo_control
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1053, in _get_component
-    ComponentProtocol, importlib.import_module(self.pkg_path)
-                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/util/loop.py", line 201, in protected_loop_func
-    return func(*args, **kwargs)
-  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/config/custom_components/tapo_control/__init__.py", line 62, in <module>
-    from .utils import (
-    ...<19 lines>...
-    )
-  File "/config/custom_components/tapo_control/utils.py", line 16, in <module>
-    from pytapo.media_stream.downloader import Downloader
-  File "/usr/local/lib/python3.13/site-packages/pytapo/__init__.py", line 19, in <module>
-    from Crypto.Cipher import AES
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Cipher/AES.py", line 26, in <module>
-    from Crypto.Util._raw_api import (load_pycryptodome_raw_lib,
-                                      VoidPointer, SmartPointer,
-                                      c_size_t, c_uint8_ptr)
-  File "/usr/local/lib/python3.13/site-packages/Crypto/Util/_raw_api.py", line 87, in <module>
-    ffi = FFI()
-  File "/usr/local/lib/python3.13/site-packages/cffi/api.py", line 54, in __init__
-    raise Exception("Version mismatch: this is the 'cffi' package version %s, located in %r.  When we import the top-level '_cffi_backend' extension module, we get version %s, located in %r.  The two versions should be equal; check your installation." % (
-        __version__, __file__,
-        backend.__version__, backend.__file__))
-Exception: Version mismatch: this is the 'cffi' package version 2.0.0, located in '/usr/local/lib/python3.13/site-packages/cffi/api.py'.  When we import the top-level '_cffi_backend' extension module, we get version 1.17.1, located in '/usr/local/lib/python3.13/site-packages/_cffi_backend.cpython-313-aarch64-linux-musl.so'.  The two versions should be equal; check your installation.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/setup.py", line 344, in _async_setup_component
-    component = await integration.async_get_component()
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1013, in async_get_component
-    self._component_future.result()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1005, in async_get_component
-    comp = self._get_component()
-  File "/usr/src/homeassistant/homeassistant/loader.py", line 1064, in _get_component
-    raise ImportError(f"Exception importing {self.pkg_path}") from err
-ImportError: Exception importing custom_components.tapo_control
-2025-11-16 22:46:50.154 WARNING (MainThread) [homeassistant.config_entries] Config entry 'Oma koti' for smartthings integration could not authenticate: Token not valid, trigger renewal
-2025-11-16 22:46:50.197 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f8a7513a0> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f8a7513a0>>>
+2025-11-16 22:54:54.183 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tapo_control which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.186 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.188 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.190 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:54.192 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration xiaomi_miot which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-11-16 22:54:57.474 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
+2025-11-16 22:55:03.670 ERROR (MainThread) [homeassistant.helpers.config_validation] The browser_mod integration does not support any configuration parameters, got {'prefix': 'browser_mod'}. Please remove the configuration parameters from your configuration.
+2025-11-16 22:55:04.042 ERROR (MainThread) [homeassistant.components.weather] The met platform for the weather integration does not support platform setup. Please remove it from your config.
+2025-11-16 22:55:05.577 ERROR (MainThread) [homeassistant.components.camera] The generic platform for the camera integration does not support platform setup. Please remove it from your config.
+2025-11-16 22:55:11.953 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f540a1940>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:55:11.990 ERROR (MainThread) [homeassistant.core] Error running job: <Job onetime listen homeassistant_start <function _async_at_core_state.<locals>._matched_event at 0x7f5a87e0c0> HassJobType.Callback <_OneTimeListener homeassistant.helpers.start:<function _async_at_core_state.<locals>._matched_event at 0x7f5a87e0c0>>>
 Traceback (most recent call last):
   File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 661, in state
     numerical_value = int(value)
@@ -327,7 +73,7 @@ Traceback (most recent call last):
     ...<5 lines>...
     ) from err
 ValueError: Sensor sensor.taman_hetken_sahkohinta has device class 'None', state class 'None' unit 'snt/kWh' and suggested precision 'None' thus indicating it has a numeric value; however, it has the non-numeric value: '' (<class 'str'>)
-2025-11-16 22:46:50.269 ERROR (MainThread) [homeassistant.components.template.template_entity] TemplateError('ZeroDivisionError: float division by zero') while processing template 'Template<template=({% set output = namespace(value=[]) %} {% for pnow in state_attr("sensor.shf_electricity_price_now", "today_prices") %}
+2025-11-16 22:55:12.058 ERROR (MainThread) [homeassistant.components.template.template_entity] TemplateError('ZeroDivisionError: float division by zero') while processing template 'Template<template=({% set output = namespace(value=[]) %} {% for pnow in state_attr("sensor.shf_electricity_price_now", "today_prices") %}
   {% set pmin = state_attr("sensor.shf_electricity_price_now", "today_min") | float %}
   {% set pmax = state_attr("sensor.shf_electricity_price_now", "today_max") | float %}
   {% set value = max(min((2*(pmax - pnow) / (pmax - pmin)-1) * states('input_number.shf_control_function_factor') | float,1),-1) %}
@@ -337,9 +83,9 @@ ValueError: Sensor sensor.taman_hetken_sahkohinta has device class 'None', state
     {% set output.value = output.value + [sin(value*pi/2) | round(2)] %}
   {% endif %}
 {% endfor %} {{ output.value }}) renders=2>' for attribute 'today_values' in entity 'sensor.shf_control_factor_1'
-2025-11-16 22:46:51.378 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'KPH Lattialämmitys päälle': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+2025-11-16 22:55:12.951 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'KPH Lattialämmitys päälle': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
    < states('input_number.KPH_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
-2025-11-16 22:46:51.380 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+2025-11-16 22:55:12.952 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
    < states('input_number.KPH_lattialammitys_lamporaja') | float - 1 }}) renders=3>
 Traceback (most recent call last):
   File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
@@ -384,9 +130,9 @@ Traceback (most recent call last):
     raise TemplateError(err) from err
 homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
    < states('input_number.KPH_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
-2025-11-16 22:46:51.422 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'KPH Lattialämmitys pois': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+2025-11-16 22:55:12.973 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'KPH Lattialämmitys pois': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
    > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
-2025-11-16 22:46:51.423 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
+2025-11-16 22:55:12.984 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
    > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5 }}) renders=3>
 Traceback (most recent call last):
   File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
@@ -431,9 +177,9 @@ Traceback (most recent call last):
     raise TemplateError(err) from err
 homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_a0dd6c313c70_temperature') | float
    > states('input_number.KPH_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
-2025-11-16 22:46:51.434 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'IV Huoneen Lattialämmitys pois': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+2025-11-16 22:55:12.992 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'IV Huoneen Lattialämmitys pois': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
    > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
-2025-11-16 22:46:51.435 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+2025-11-16 22:55:12.993 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
    > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5 }}) renders=3>
 Traceback (most recent call last):
   File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
@@ -478,9 +224,9 @@ Traceback (most recent call last):
     raise TemplateError(err) from err
 homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
    > states('input_number.IV_lattialammitys_lamporaja') | float + 0.5 }}' but no default was specified
-2025-11-16 22:46:51.473 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'IV Huoneen Lattialämmitys Päälle': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+2025-11-16 22:55:13.001 WARNING (MainThread) [homeassistant.components.template.trigger] Error initializing 'template' trigger for 'IV Huoneen Lattialämmitys Päälle': ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
    < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
-2025-11-16 22:46:51.474 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
+2025-11-16 22:55:13.002 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
    < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}) renders=3>
 Traceback (most recent call last):
   File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2443, in forgiving_float_filter
@@ -525,31 +271,48 @@ Traceback (most recent call last):
     raise TemplateError(err) from err
 homeassistant.exceptions.TemplateError: ValueError: Template error: float got invalid input 'unavailable' when rendering template '{{ states('sensor.shellyplus1pm_e465b8f2167c_temperature') | float
    < states('input_number.IV_lattialammitys_lamporaja') | float - 1 }}' but no default was specified
-2025-11-16 22:46:52.697 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
-2025-11-16 22:46:52.698 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
-2025-11-16 22:46:52.699 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
-2025-11-16 22:46:53.825 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
-2025-11-16 22:46:53.826 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
-2025-11-16 22:46:53.828 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
-2025-11-16 22:49:29.878 WARNING (SyncWorker_7) [homeassistant.loader] We found a custom integration tapo_control which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:49:29.880 WARNING (SyncWorker_7) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:49:29.883 WARNING (SyncWorker_7) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:49:29.884 WARNING (SyncWorker_7) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:49:29.886 WARNING (SyncWorker_7) [homeassistant.loader] We found a custom integration xiaomi_miot which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:10.504 WARNING (Recorder) [homeassistant.components.sensor.recorder] The unit of sensor.nordpool_kwh_fi_eur_3_10_0255 (None) cannot be converted to the unit of previously compiled statistics (EUR/kWh). Generation of long term statistics will be suppressed unless the unit changes back to EUR/kWh or a compatible unit. Go to https://my.home-assistant.io/redirect/developer_statistics to fix this
-2025-11-16 22:50:11.088 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity update.shellyplus1_10061c7a4d10_firmware not found.
-2025-11-16 22:50:11.088 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity update.shellyplus1pm_a0dd6c313c70_firmware not found.
-2025-11-16 22:50:11.089 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity update.shellyplus1pm_e465b8f2167c_firmware not found.
-2025-11-16 22:50:11.090 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity update.tapo_c310_c2a2_update not found.
-2025-11-16 22:50:48.536 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration tapo_control which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:48.539 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:48.541 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:48.543 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:48.545 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration xiaomi_miot which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:57.225 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration tapo_control which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:57.226 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:57.226 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:57.231 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:50:57.233 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration xiaomi_miot which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-11-16 22:54:37.702 ERROR (MainThread) [homeassistant.components.homeassistant] The browser_mod integration does not support any configuration parameters, got {'prefix': 'browser_mod'}. Please remove the configuration parameters from your configuration.
-2025-11-16 22:54:40.948 WARNING (MainThread) [homeassistant.core] Task <Task pending name='admin service homeassistant.restart' coro=<async_setup.<locals>.async_handle_core_service() running at /usr/src/homeassistant/homeassistant/components/homeassistant/__init__.py:238> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[set.remove(), Task.task_wakeup()]> was still running after final writes shutdown stage; Integrations should cancel non-critical tasks when receiving the stop event to prevent delaying shutdown
+2025-11-16 22:55:13.931 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:13.932 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:13.932 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:15.042 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:15.043 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:15.044 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 22:55:16.085 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f524982d0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:55:18.078 WARNING (Recorder) [homeassistant.components.sensor.recorder] The unit of sensor.nordpool_kwh_fi_eur_3_10_0255 (None) cannot be converted to the unit of previously compiled statistics (EUR/kWh). Generation of long term statistics will be suppressed unless the unit changes back to EUR/kWh or a compatible unit. Go to https://my.home-assistant.io/redirect/developer_statistics to fix this
+2025-11-16 22:55:29.458 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d8690>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:55:30.065 ERROR (MainThread) [frontend.js.modern.202505313] Uncaught error from Chrome 142.0.0.0 on Windows 10
+Error: Failed to execute 'define' on 'CustomElementRegistry': the name "clock-weather-card" has already been used with this registry
+A.define (src/scoped-custom-element-registry.ts:180:12)
+/hacsfiles/clock-weather-card/clock-weather-card.js:251:9857
+/hacsfiles/clock-weather-card/clock-weather-card.js:251:9872
+e (/hacsfiles/clock-weather-card/clock-weather-card.js:1:250)
+/hacsfiles/clock-weather-card/clock-weather-card.js:251:9802
+2025-11-16 22:55:52.592 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9a90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:56:35.842 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2da210>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:57:59.043 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f63ad51d0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 22:59:22.148 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9a90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:00:00.181 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for sensor.nordpool_kwh_fi_eur_3_10_0255 exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-11-16 23:00:45.619 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9e50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:02:08.742 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2da350>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:03:32.213 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2da350>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:04:55.712 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d8410>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:06:18.941 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9f90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:07:42.313 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9bd0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:09:05.718 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9f90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:10:28.882 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2db4d0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:11:52.313 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2db610>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:13:15.423 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2dbd90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:14:38.842 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2dbb10>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:16:02.281 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9e50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:17:25.592 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2db890>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:18:48.762 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9e50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:20:12.198 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2db4d0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:21:35.340 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9e50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:22:58.712 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9f90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:24:22.181 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9bd0>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:25:45.381 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9e50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:27:08.871 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2dbd90>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:28:32.242 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d8410>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:29:55.601 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2db610>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:31:18.711 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9e50>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
+2025-11-16 23:32:41.921 ERROR (MainThread) [custom_components.tapo_control] Unable to connect to Tapo: Cameras Control controller: HTTPSConnectionPool(host='192.168.1.86', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4b2d9d10>: Failed to establish a new connection: [Errno 113] Host is unreachable'))
